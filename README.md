@@ -6,7 +6,7 @@ This application portrays COVID-19 spread, recovery status in India. The Govt da
 
 # Those who wants to contribute in this development
 
-This is my personal project but I would encourage everyone who wants to contribute to make it better. Please feel free to drop me an email that I could grant access to this repo.
+This is my personal project but I would encourage everyone who wants to contribute to make it better. Please feel free to drop me an email at amithellopublic@gmail.com that I could grant access to this repo.
 
 ## Primary Tech stack
 
