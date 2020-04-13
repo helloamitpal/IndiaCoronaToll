@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect, useState } from 'react';
-import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 import config from '../config';
 import NotFoundModule from '../modules/NotFound/Loadable';
-import DashboardModule from '../modules/Dashboard/pages/list/Loadable';
+import DashboardHomeModule from '../modules/Dashboard/pages/home/Loadable';
+import DashboardStateModule from '../modules/Dashboard/pages/state/Loadable';
 import Header from '../components/molecules/Header';
 import Footer from '../components/molecules/Footer';
 import LocaleContext from '../locale/localeContext';
@@ -51,7 +52,12 @@ const Router = ({ history }) => {
             <Route
               exact
               path={config.DASHBOARD_PAGE}
-              render={(props) => <DashboardModule {...props} />}
+              render={(props) => <DashboardHomeModule {...props} />}
+            />
+            <Route
+              exact
+              path={config.DASHBOARD_STATE_PAGE}
+              render={(props) => <DashboardStateModule {...props} />}
             />
             <Route path="" render={(props) => <NotFoundModule {...props} />} />
           </Switch>
