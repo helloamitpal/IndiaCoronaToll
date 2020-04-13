@@ -1,6 +1,4 @@
 module.exports = {
-  REDIS_TIVO_ADDONS_SERVICES: 'REDIS_TIVO_ADDONS_SERVICES',
-  REDIS_TIVO_CUSTOMER_INFO: 'REDIS_TIVO_CUSTOMER_INFO',
-  REDIS_TIVO_PACKAGES: 'REDIS_TIVO_PACKAGES',
-  REDIS_TIVO_REGIONS: 'REDIS_TIVO_REGIONS'
+  TRAVEL_HISTORY_URL: 'https://api.covid19india.org/travel_history.json',
+  NATIONAL_DATA_URL: 'https://api.covid19india.org/data.json'
 };
