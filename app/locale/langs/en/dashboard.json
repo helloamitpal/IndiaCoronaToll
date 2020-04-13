@@ -1,6 +1,8 @@
 {
-  "title": "India Corona Dashboard",
-  "usersPerRegion": "Users per region",
-  "usersPerPackage": "Users per subscribed package",
-  "usersPerAddons": "Users per subscribed addons"
+  "title": "Home",
+  "confirmed": "Confirmed",
+  "deceased": "Deceased",
+  "recovered": "Recovered",
+  "asOfToday": "As of Today",
+  "dailyCases": "Daily Cases"
 }

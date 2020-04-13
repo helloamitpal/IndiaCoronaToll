@@ -1,7 +1,7 @@
 import { handle } from 'redux-pack';
 
 import * as actionTypes from './dashboardActionTypes';
-// import dashboardService from './dashboardService';
+import dashboardService from './dashboardService';
 import translate from '../../locale';
 
 const initialState = {
@@ -48,7 +48,7 @@ const dashboardReducer = (state = initialState, action = '') => {
         success: (prevState) => {
           return {
             ...prevState,
-            overallInfo: { ...payload }
+            overallInfo: dashboardService.getSynthesizedInfo({ ...payload })
           };
         },
         failure: (prevState) => ({

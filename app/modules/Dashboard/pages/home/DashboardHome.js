@@ -7,17 +7,23 @@ import PropTypes from 'prop-types';
 import * as dashboardActionCreator from '../../dashboardActionCreator';
 import LoadingIndicator from '../../../../components/atoms/LoadingIndicator';
 import translate from '../../../../locale';
+import DaywiseSpreadChart from '../../molecules/DaywiseSpreadChart';
 
 import '../../Dashboard.scss';
 
 const DashboardHomePage = ({
-  dashboardState: { loading, errors, travelHistory, overallInfo },
+  dashboardState: {
+    loading,
+    errors,
+    travelHistory,
+    overallInfo
+  },
   dashboardActions
 }) => {
   const title = translate('dashboard.title');
 
   useEffect(() => {
-    dashboardActions.getTravelHistory();
+    // dashboardActions.getTravelHistory();
     dashboardActions.getOverallInfo();
   }, [dashboardActions]);
 
@@ -34,6 +40,7 @@ const DashboardHomePage = ({
     <div className="dashboard-page-container">
       {head}
       {loading && <LoadingIndicator />}
+      {overallInfo && <DaywiseSpreadChart kpi={overallInfo.kpi} series={overallInfo.chartSeries} />}
     </div>
   );
 };

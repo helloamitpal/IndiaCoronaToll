@@ -1,5 +1,5 @@
 {
-  "appName": "TIVO",
+  "appName": "ICT",
   "menu": "Menu",
   "home": "Home",
   "copyright": "© 2000-2030, All rights reserved.",
@@ -7,6 +7,5 @@
   "somethingWentWrongDesc": "Sorry for the inconvenience caused. <br /> We are working on it. <br /> Stay connected.",
   "pageNotFound": "Page Not Found!!!",
   "tryAgain": "Please try again!",
-  "failed": "Something went wrong. Please try again after some time.",
-  "reset": "Reset"
+  "failed": "Something went wrong. Please try again after some time."
 }
