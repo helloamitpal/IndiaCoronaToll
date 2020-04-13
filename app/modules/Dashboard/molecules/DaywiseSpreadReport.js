@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 import translate from '../../../locale';
 import KPI from './KPI';
 
-import './DaywiseSpreadChart.scss';
+import './DaywiseSpreadReport.scss';
 
-const DaywiseSpreadChart = ({ series, kpi }) => {
+const DaywiseSpreadReport = ({ series, kpi }) => {
   return (
     <div className="daywise-spread-container">
       <KPI data={kpi} />
@@ -20,9 +20,9 @@ const DaywiseSpreadChart = ({ series, kpi }) => {
   );
 };
 
-DaywiseSpreadChart.propTypes = {
+DaywiseSpreadReport.propTypes = {
   series: PropTypes.object.isRequired,
   kpi: PropTypes.object.isRequired
 };
 
-export default DaywiseSpreadChart;
+export default DaywiseSpreadReport;

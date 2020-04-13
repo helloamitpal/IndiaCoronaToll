@@ -1,8 +1,14 @@
 {
   "title": "Home",
   "confirmed": "Confirmed",
-  "deceased": "Deceased",
+  "deceased": "Death",
   "recovered": "Recovered",
   "asOfToday": "As of Today",
-  "dailyCases": "Daily Cases"
+  "dailyCases": "Daily Cases",
+  "stateReports": "State Reports",
+  "recovery": "Recovered: ${COUNT} (${PERCENTAGE}%)",
+  "lastUpdated": "Last updated on ${DATE}",
+  "confirmedCount": "Confirmed: ${COUNT}",
+  "activeCount": "Active: ${COUNT} (${PERCENTAGE}%)",
+  "deathCount": "Death: ${COUNT} (${PERCENTAGE}%)"
 }

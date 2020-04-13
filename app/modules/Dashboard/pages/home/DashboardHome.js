@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet';
@@ -7,7 +7,8 @@ import PropTypes from 'prop-types';
 import * as dashboardActionCreator from '../../dashboardActionCreator';
 import LoadingIndicator from '../../../../components/atoms/LoadingIndicator';
 import translate from '../../../../locale';
-import DaywiseSpreadChart from '../../molecules/DaywiseSpreadChart';
+import DaywiseSpreadReport from '../../molecules/DaywiseSpreadReport';
+import StateChart from '../../molecules/StateReport';
 
 import '../../Dashboard.scss';
 
@@ -40,7 +41,14 @@ const DashboardHomePage = ({
     <div className="dashboard-page-container">
       {head}
       {loading && <LoadingIndicator />}
-      {overallInfo && <DaywiseSpreadChart kpi={overallInfo.kpi} series={overallInfo.chartSeries} />}
+      {
+        overallInfo && (
+          <Fragment>
+            <DaywiseSpreadReport kpi={overallInfo.kpi} series={overallInfo.chartSeries} />
+            <StateChart reports={overallInfo.stateReports} />
+          </Fragment>
+        )
+      }
     </div>
   );
 };

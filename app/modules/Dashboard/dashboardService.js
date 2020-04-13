@@ -1,4 +1,7 @@
+import moment from 'moment';
+
 import translate from '../../locale';
+import config from '../../config';
 
 const getGrowthRate = (currentVal, prevVal, reversed = false) => {
   if (prevVal === currentVal) {
@@ -80,12 +83,27 @@ const getKPIData = (caseSeries) => {
   };
 };
 
+const getStatewiseReport = (statewiseData) => {
+  return statewiseData.map(({ recovered, deaths, confirmed, active, lastupdatedtime, ...rest }) => ({
+    ...rest,
+    recovered,
+    deaths,
+    confirmed,
+    active,
+    lastupdatedtime: moment(lastupdatedtime, config.INPUT_DATE_FORMAT).format(config.DATE_FORMAT),
+    deathsPerTotal: confirmed > 0 ? ((deaths / confirmed) * 100).toFixed(1) : 0,
+    activePerTotal: confirmed > 0 ? ((active / confirmed) * 100).toFixed(1) : 0,
+    recoverTotal: confirmed > 0 ? ((recovered / confirmed) * 100).toFixed(1) : 0
+  }));
+};
+
 const dashboardService = {
   getSynthesizedInfo: ({ cases_time_series: caseSeries, statewise, tested }) => {
     const infoObj = {};
 
     infoObj.chartSeries = getDailyChartData(caseSeries.slice(0, -1));
     infoObj.kpi = getKPIData(caseSeries);
+    infoObj.stateReports = getStatewiseReport(statewise.slice(1));
 
     return infoObj;
   }
