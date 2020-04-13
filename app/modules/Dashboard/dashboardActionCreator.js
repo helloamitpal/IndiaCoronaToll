@@ -1,16 +1,17 @@
 import * as actionTypes from './dashboardActionTypes';
 
-export const getDashboardData = (url) => (dispatch, getState, { api }) => {
-  const apis = [
-    api.get('/api/addons'),
-    api.get('/api/customerInfo'),
-    api.get('/api/packages'),
-    api.get('/api/regions')
-  ];
-
+export const getTravelHistory = () => (dispatch, getState, { api }) => {
   dispatch({
-    type: actionTypes.GET_DASHBOARD_DATA,
-    promise: Promise.all(apis),
+    type: actionTypes.GET_TRAVEL_HISTORY,
+    promise: api.get('/api/travelHistory'),
+    payload: {}
+  });
+};
+
+export const getOverallInfo = (url) => (dispatch, getState, { api }) => {
+  dispatch({
+    type: actionTypes.GET_OVERALL_INFO,
+    promise: api.get('/api/overallInfo'),
     payload: {}
   });
 };
