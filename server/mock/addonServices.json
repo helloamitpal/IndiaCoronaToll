@@ -1,0 +1,27 @@
+{
+  "addonServicies": [
+    {
+      "id" :1,
+      "name": "PrimeVideo",
+      "price": "10",
+      "image": "https://www.tivo.com/content/dam/tivo/consumer/us/en/logos/prime-video.png"
+    },
+    {
+      "id" :2,
+      "name": "Netflix",
+      "price": "15",
+      "image": "https://www.tivo.com/content/dam/tivo/consumer/us/en/logos/netflix.png"
+    },
+    {
+      "id" :3,
+      "name": "Hulu",
+      "price": "8",
+      "image": "https://www.tivo.com/content/dam/tivo/consumer/us/en/logos/hulu.png"
+    },{
+      "id" :4,
+      "name": "Youtube",
+      "price": "5",
+      "image": "https://www.tivo.com/content/dam/tivo/consumer/us/en/logos/youtube.png"
+    }
+  ]
+}

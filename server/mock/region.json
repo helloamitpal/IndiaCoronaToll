@@ -1,0 +1,52 @@
+{
+  "region": [
+    {
+      "regionCode": "1",
+      "region": "San Francisco",
+      "area": "California",
+      "Country": "USA"
+    },
+    {
+      "regionCode": "2",
+      "region": "Los Angeles",
+      "area": "California",
+      "Country": "USA"
+    },
+    {
+      "regionCode": "3",
+      "region": "New York City",
+      "area": "New York",
+      "Country": "USA"
+    },
+    {
+      "regionCode": "4",
+      "region": "Hudson Valley",
+      "area": "New York",
+      "Country": "USA"
+    },
+    {
+      "regionCode": "5",
+      "region": "Indianapolis",
+      "area": "Indiana",
+      "Country": "USA"
+    },
+    {
+      "regionCode": "6",
+      "region": "Fort Wayne",
+      "area": "Indiana",
+      "Country": "USA"
+    },
+    {
+      "regionCode": "7",
+      "region": "Phoenix",
+      "area": "Arizona",
+      "Country": "USA"
+    },
+    {
+      "regionCode": "8",
+      "region": "Tucson",
+      "area": "Arizona",
+      "Country": "USA"
+    }
+  ]
+}

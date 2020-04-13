@@ -1,0 +1,92 @@
+{
+  "package": [
+    {
+      "name": "Sports",
+      "price": "50",
+      "packageId": "1",
+      "channel": [
+        {
+          "channelNumber": "1",
+          "name": "ESPN",
+          "img": "http://i.tivo.com/images-static/logos//65x55/2.png"
+        },
+        {
+          "channelNumber": "2",
+          "name": "FOX Sports",
+          "img": "http://i.tivo.com/images-static/logos//65x55/136.png"
+        },
+        {
+          "channelNumber": "3",
+          "name": "NBC Sports",
+          "img": "http://i.tivo.com/images-static/logos//65x55/1419.png"
+        }
+      ]
+    },
+    {
+      "name": "Entertainment",
+      "price": "40",
+      "packageId": "2",
+      "channel": [
+        {
+          "channelNumber": "4",
+          "name": "Show Time",
+          "img": "http://i.tivo.com/images-static/logos//65x55/23.png"
+        },
+        {
+          "channelNumber": "5",
+          "name": "Life",
+          "img": "http://i.tivo.com/images-static/logos//65x55/898.png"
+        },
+        {
+          "channelNumber": "6",
+          "name": "FOX",
+          "img": "http://i.tivo.com/images-static/logos//65x55/21.png"
+        }
+      ]
+    },
+    {
+      "name": "Movies",
+      "price": "60",
+      "packageId": "3",
+      "channel": [
+        {
+          "channelNumber": "7",
+          "name": "Cinemax",
+          "img": "http://i.tivo.com/images-static/logos//65x55/99.png"
+        },
+        {
+          "channelNumber": "8",
+          "name": "TBS",
+          "img": "http://i.tivo.com/images-static/logos//65x55/856.png"
+        },
+        {
+          "channelNumber": "9",
+          "name": "FMX",
+          "img": "http://i.tivo.com/images-static/logos//65x55/248.png"
+        }
+      ]
+    },
+    {
+      "name": "Music",
+      "price": "40",
+      "packageId": "4",
+      "channel": [
+        {
+          "channelNumber": "10",
+          "name": "MTV",
+          "img": "http://i.tivo.com/images-static/logos//65x55/11.png"
+        },
+        {
+          "channelNumber": "11",
+          "name": "VH1",
+          "img": "http://i.tivo.com/images-static/logos//65x55/553.png"
+        },
+        {
+          "channelNumber": "12",
+          "name": "MTV Classic",
+          "img": "http://i.tivo.com/images-static/logos//65x55/240.png"
+        }
+      ]
+    }
+  ]
+}

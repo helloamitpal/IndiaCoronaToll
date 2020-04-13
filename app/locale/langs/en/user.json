@@ -1,0 +1,18 @@
+{
+  "listTitle": "User List",
+  "noUserFound": "No user found",
+  "addedPkgTitle": "Added Packages",
+  "addedAddonsPkgTitle": "Added Addons Packages",
+  "searchByNamePlaceholder": "Search by name",
+  "createUser": "Create User",
+  "customerName": "Customer Name",
+  "searchUser": "Search User",
+  "email": "Email",
+  "package": "Package",
+  "region": "Region",
+  "addons": "Addons",
+  "create": "Create",
+  "channels": "Channels: ${CHANNELS} | Price: ${PRICE}Rs",
+  "select": "Please select",
+  "createUserSuccess": "User has been created successfully"
+}

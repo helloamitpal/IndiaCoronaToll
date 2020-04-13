@@ -1,0 +1,24 @@
+.header-container {
+  .locale-selector-container.subheader {
+    padding: 0 32px;
+  }
+
+  .icon span {
+    position: relative;
+    top: 8px;
+  }
+
+  .sidenav .divider {
+    margin: 0;
+  }
+
+  .sidenav-trigger {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .sidenav-trigger {
+    display: none;
+  }
+}

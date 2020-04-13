@@ -1,0 +1,114 @@
+{
+  "customerInfo": [
+    {
+      "regionCode": "1",
+      "tsn": "A898765430",
+      "personalInfo": {
+        "name": "John",
+        "email": "john@tivo.com",
+        "img": "https://webstockreview.net/images/smiley-face-clip-art-human-face-2.png"
+      },
+      "package": "1,2,3",
+      "addOnService": "1, 4"
+    },
+    {
+      "regionCode": "2",
+      "tsn": "A898765431",
+      "personalInfo": {
+        "name": "Joe",
+        "email": "joe@tivo.com",
+        "img": "https://webstockreview.net/images/smiley-face-clip-art-human-face-2.png"
+      },
+      "package": "1,3,4",
+      "addOnService": "1, 2"
+    },
+    {
+      "regionCode": "1",
+      "tsn": "A898765432",
+      "personalInfo": {
+        "name": "John",
+        "email": "john@tivo.com",
+        "img": "https://webstockreview.net/images/smiley-face-clip-art-human-face-2.png"
+      },
+      "package": "1,2,3",
+      "addOnService": "1, 4"
+    },
+    {
+      "regionCode": "2",
+      "tsn": "A898765433",
+      "personalInfo": {
+        "name": "Tom",
+        "email": "tom@tivo.com",
+        "img": "https://webstockreview.net/images/smiley-face-clip-art-human-face-2.png"
+      },
+      "package": "1,3",
+      "addOnService": "4"
+    },
+    {
+      "regionCode": "3",
+      "tsn": "A898765434",
+      "personalInfo": {
+        "name": "Donald",
+        "email": "donald@tivo.com",
+        "img": "https://webstockreview.net/images/smiley-face-clip-art-human-face-2.png"
+      },
+      "package": "3, 4",
+      "addOnService": "2, 4"
+    },
+    {
+      "regionCode": "4",
+      "tsn": "A898765435",
+      "personalInfo": {
+        "name": "Andrew",
+        "email": "andrew@tivo.com",
+        "img": "https://webstockreview.net/images/smiley-face-clip-art-human-face-2.png"
+      },
+      "package": "1,2,3,4",
+      "addOnService": "1,2,3,4"
+    },
+    {
+      "regionCode": "5",
+      "tsn": "A898765436",
+      "personalInfo": {
+        "name": "Alaxnder",
+        "email": "alaxnder@tivo.com",
+        "img": "https://webstockreview.net/images/smiley-face-clip-art-human-face-2.png"
+      },
+      "package": "",
+      "addOnService": "1,2,3, 4"
+    },
+    {
+      "regionCode": "6",
+      "tsn": "A898765437",
+      "personalInfo": {
+        "name": "Kellie",
+        "email": "kellie@tivo.com",
+        "img": "https://webstockreview.net/images/smiley-face-clip-art-human-face-2.png"
+      },
+      "package": "1,2,3,4",
+      "addOnService": ""
+    },
+    {
+      "regionCode": "6",
+      "tsn": "A898765438",
+      "personalInfo": {
+        "name": "Jean",
+        "email": "jean@tivo.com",
+        "img": "https://webstockreview.net/images/smiley-face-clip-art-human-face-2.png"
+      },
+      "package": "1,2",
+      "addOnService": "1,2,3,4"
+    },
+    {
+      "regionCode": "8",
+      "tsn": "A898765439",
+      "personalInfo": {
+        "name": "Brain",
+        "email": "brain@tivo.com",
+        "img": "https://webstockreview.net/images/smiley-face-clip-art-human-face-2.png"
+      },
+      "package": "2,3",
+      "addOnService": "2,3"
+    }
+  ]
+}

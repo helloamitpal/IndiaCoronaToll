@@ -1,0 +1,56 @@
+@import './colors.scss';
+
+.modal-container {
+  .close-btn {
+    position: absolute;
+    right: 0;
+    top: 7px;
+    background: transparent;
+    border: 0 none;
+  }
+
+  &.overlay {
+    position: fixed;
+    display: block;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $overlay-background;
+    z-index: 999;
+    cursor: pointer;
+  }
+
+  .modal-content {
+    cursor: default;
+    margin: 15% auto;
+    background-color: $modal-background;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    max-width: 500px;
+    padding: 2.5em;
+    position: relative;
+    overflow: auto;
+    box-sizing: border-box;
+
+    .modal-body {
+      overflow: auto;
+      position: relative;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .modal-container .modal-content {
+    padding: 2em 1em;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+  }
+}

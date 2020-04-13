@@ -1,0 +1,11 @@
+.user-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+
+  img {
+    background-color: rgba(0,0,0,0.5);
+    margin: 0 10px;
+  }
+}

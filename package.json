@@ -1,0 +1,206 @@
+{
+  "name": "TIVO",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=8.10.0",
+    "npm": ">=5"
+  },
+  "description": "TIVO is an application to manage user's OTT services",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amit040386/TIVO"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "redux",
+    "redux-thunk",
+    "redux-persist",
+    "redux-pack",
+    "sass",
+    "axios",
+    "react-helmet",
+    "react-loadable",
+    "react-router-dom",
+    "jest",
+    "enzyme-testing",
+    "webpack",
+    "redux-data-flow",
+    "csr",
+    "proxy-setup",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "author": "Amit Pal",
+  "scripts": {
+    "prebuild": "npm run build:clean",
+    "build": "cross-env NODE_ENV=production webpack --config webpackConfig/webpack.prod.config.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "build:clean": "rimraf ./build",
+    "clean": "npm run build:clean",
+    "eslint:fix": "eslint -- . --ignore-path .gitignore --fix",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore",
+    "lint:js": "npm run lint:eslint -- . ",
+    "start": "npm run locale && cross-env NODE_ENV=development nodemon server",
+    "start:prod": "cross-env NODE_ENV=production node server",
+    "start:production": "npm run locale && npm run build && npm run start:prod",
+    "pretest": "npm run lint",
+    "test": "jest -u --coverage",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "locale": "node mergeLocales.js"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "chalk": "^2.3.2",
+    "cheerio": "^1.0.0-rc.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "4.16.3",
+    "glob": "^7.1.6",
+    "helmet": "^3.19.0",
+    "ip": "1.1.5",
+    "js-cookie": "^2.2.1",
+    "lodash": "^4.17.11",
+    "minimist": "1.2.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-helmet": "^5.2.0",
+    "react-lazy-load-image-component": "^1.4.3",
+    "react-loadable": "^5.5.0",
+    "react-redux": "5.0.7",
+    "react-router-dom": "^5.1.2",
+    "react-toastify": "^5.5.0",
+    "react-virtualized": "^9.21.2",
+    "redis": "^3.0.2",
+    "redux": "3.7.2",
+    "redux-pack": "^0.1.5",
+    "redux-persist": "5.10.0",
+    "redux-thunk": "^2.3.0",
+    "request": "^2.88.2",
+    "uuid": "^7.0.3",
+    "zingchart-react": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.1.2",
+    "@babel/core": "7.1.2",
+    "eslint-config-react-app": "^5.1.0",
+    "eslint-plugin-flowtype": "^4.5.2",
+    "@babel/plugin-proposal-class-properties": "7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "7.1.0",
+    "@babel/plugin-transform-react-constant-elements": "7.0.0",
+    "@babel/plugin-transform-react-inline-elements": "7.0.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "@babel/register": "^7.0.0",
+    "add-asset-html-webpack-plugin": "3.0.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.4",
+    "babel-plugin-dynamic-import-node": "2.2.0",
+    "babel-plugin-lodash": "3.3.4",
+    "babel-plugin-react-transform": "3.0.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.19",
+    "brotli-webpack-plugin": "^1.1.0",
+    "circular-dependency-plugin": "5.0.2",
+    "copy-webpack-plugin": "^5.0.4",
+    "cross-env": "5.2.0",
+    "css-loader": "1.0.0",
+    "eslint": "5.7.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-import-resolver-webpack": "0.10.1",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
+    "eventsource-polyfill": "0.9.6",
+    "exports-loader": "0.7.0",
+    "file-loader": "1.1.11",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "imports-loader": "0.8.0",
+    "lint-staged": "7.3.0",
+    "node-plop": "0.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.19.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "jest-css-modules": "^2.1.0",
+    "jsdom": "^15.2.1",
+    "null-loader": "0.1.1",
+    "plop": "2.1.0",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "react-test-renderer": "^16.5.2",
+    "rimraf": "2.6.2",
+    "sass-loader": "^7.0.1",
+    "shelljs": "^0.8.1",
+    "style-loader": "0.23.1",
+    "url-loader": "1.1.2",
+    "webpack": "4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-middleware": "3.4.0",
+    "webpack-hot-middleware": "2.24.3",
+    "webpack-pwa-manifest": "^4.0.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    },
+    "testRegex": "__test__/.*.spec.(js|jsx)$",
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.(css|scss|less)$": "jest-css-modules"
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/api",
+      "src/images",
+      "src/config",
+      "src/styles",
+      "test/jest",
+      "test/__mock_data__"
+    ],
+    "testEnvironment": "jsdom",
+    "globals": {
+      "NODE_ENV": "test"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.js": "eslint",
+      "src/**/*.scss": "stylelint --syntax=scss"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+@import './colors.scss';
+
+.virtual-row {
+  display: flex;
+  position: relative;
+  height: 60px;
+  align-items: center;
+
+  .row-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+
+  img {
+    width: 42px;
+    height: 42px;
+  }
+
+  button {
+    background: transparent;
+    border: 0 none;
+    cursor: pointer;
+
+    &:hover .material-icons {
+      color: $bookmark-btn-hover-color;
+    }
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $row-border;
+  }
+
+  & > div {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 20px;
+  }
+}
