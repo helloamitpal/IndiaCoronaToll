@@ -1,7 +1,7 @@
 import { handle } from 'redux-pack';
 
 import * as actionTypes from './dashboardActionTypes';
-import dashboardService from './dashboardService';
+// import dashboardService from './dashboardService';
 import translate from '../../locale';
 
 const initialState = {
@@ -23,20 +23,9 @@ const dashboardReducer = (state = initialState, action = '') => {
           loading: true
         }),
         success: (prevState) => {
-          const [addonsList, customerList, packageList, regionList] = payload;
-          const {
-            usersPerPackage,
-            usersPerAddons,
-            usersPerRegion
-          } = dashboardService.getChartData(regionList, addonsList, packageList, customerList);
-
           return {
             ...prevState,
-            dashboardDetails: {
-              usersPerPackage,
-              usersPerAddons,
-              usersPerRegion
-            }
+            travelHistory: [...payload]
           };
         },
         failure: (prevState) => ({
@@ -57,20 +46,9 @@ const dashboardReducer = (state = initialState, action = '') => {
           loading: true
         }),
         success: (prevState) => {
-          const [addonsList, customerList, packageList, regionList] = payload;
-          const {
-            usersPerPackage,
-            usersPerAddons,
-            usersPerRegion
-          } = dashboardService.getChartData(regionList, addonsList, packageList, customerList);
-
           return {
             ...prevState,
-            dashboardDetails: {
-              usersPerPackage,
-              usersPerAddons,
-              usersPerRegion
-            }
+            overallInfo: { ...payload }
           };
         },
         failure: (prevState) => ({

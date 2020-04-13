@@ -15,6 +15,7 @@ module.exports = (app, redisClient) => {
   app.get('/api/travelHistory', (req, res) => {
     request.get(TRAVEL_HISTORY_URL)
       .on('response', ({ travel_history: travelHistory }) => {
+        logger.success('travel history is fetched successfully');
         res.send(200, travelHistory);
       })
       .on('error', (err) => {
@@ -25,6 +26,7 @@ module.exports = (app, redisClient) => {
   app.get('/api/overallInfo', (req, res) => {
     request.get(NATIONAL_DATA_URL)
       .on('response', ({ cases_time_series: caseSeries, statewise, tested }) => {
+        logger.success('case series, state wise data and tested results are fetched successfully');
         res.send(200, {
           caseSeries,
           statewise,
