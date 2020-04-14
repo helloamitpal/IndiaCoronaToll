@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import LocaleSelector from '../../atoms/LocaleSelector';
+// import LocaleSelector from '../../atoms/LocaleSelector';
 import translate from '../../../locale';
 import config from '../../../config';
 
@@ -67,7 +67,7 @@ const Header = ({ onChangeLocale }) => {
               </li>
               <li>
                 <Link to={config.UNSAFE_PLACES_PAGE} className="item">
-                  {translate('history.unsafePlaces')}
+                  {translate('place.unsafePlaces')}
                 </Link>
               </li>
               <li>

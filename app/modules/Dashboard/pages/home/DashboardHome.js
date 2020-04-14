@@ -29,6 +29,10 @@ const DashboardHomePage = ({
     dashboardActions.getOverallInfo();
   }, [dashboardActions]);
 
+  const onMouseEnter = ({ name, value }) => (`${name}: ${value}`);
+
+  const onMouseLeave = ({ name, value }) => ('');
+
   const head = (
     <Helmet key="dashboard-home-page">
       <title>{title}</title>
@@ -48,7 +52,7 @@ const DashboardHomePage = ({
             <DaywiseSpreadReport kpi={overallInfo.kpi} series={overallInfo.chartSeries} />
             <TestReport series={overallInfo.testingRecords} />
             <h2>{translate('dashboard.stateReports')}</h2>
-            <ChoroplethMap series={overallInfo.stateChartSeries} />
+            <ChoroplethMap series={overallInfo.stateChartSeries} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} />
             <StateReport reports={overallInfo.stateReports} />
           </Fragment>
         )

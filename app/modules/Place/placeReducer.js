@@ -2,6 +2,7 @@ import { handle } from 'redux-pack';
 
 import * as actionTypes from './placeActionTypes';
 import translate from '../../locale';
+import placeService from './placeService';
 
 const initialState = {
   errors: '',
@@ -23,7 +24,7 @@ const placeReducer = (state = initialState, action = '') => {
         success: (prevState) => {
           return {
             ...prevState,
-            travelHistory: [...payload]
+            travelHistory: placeService.synthesizeResponse([...payload.travel_history])
           };
         },
         failure: (prevState) => ({
