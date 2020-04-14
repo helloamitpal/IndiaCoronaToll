@@ -50,7 +50,7 @@ const Header = ({ onChangeLocale }) => {
               </li>
               <li>
                 <Link to={config.UNSAFE_PLACES_PAGE} className="item" onClick={toggleMenu}>
-                  {translate('history.unsafePlaces')}
+                  {translate('place.unsafePlaces')}
                 </Link>
               </li>
               <li>

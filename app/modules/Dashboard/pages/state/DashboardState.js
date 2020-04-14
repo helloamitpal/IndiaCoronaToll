@@ -65,7 +65,7 @@ const DashboardStatePage = ({
             <ul className="district-list">
               {
                 districtData.map(({ district, confirmed }) => (
-                  <li>
+                  <li key={`district-row-${district}`}>
                     <span>{district}</span>
                     :&nbsp;
                     <span className="bold">{confirmed}</span>

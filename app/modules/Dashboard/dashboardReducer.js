@@ -6,7 +6,6 @@ import translate from '../../locale';
 
 const initialState = {
   errors: '',
-  travelHistory: null,
   overallInfo: null,
   stateRecords: null,
   loading: false
@@ -28,29 +27,6 @@ const dashboardReducer = (state = initialState, action = '') => {
           return {
             ...prevState,
             stateRecords: { ...payload }
-          };
-        },
-        failure: (prevState) => ({
-          ...prevState,
-          errors: translate('common.failed')
-        }),
-        finish: (prevState) => ({
-          ...prevState,
-          loading: false
-        })
-      });
-
-    case actionTypes.GET_TRAVEL_HISTORY:
-      return handle(state, action, {
-        start: (prevState) => ({
-          ...prevState,
-          errors: '',
-          loading: true
-        }),
-        success: (prevState) => {
-          return {
-            ...prevState,
-            travelHistory: [...payload]
           };
         },
         failure: (prevState) => ({

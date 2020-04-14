@@ -6,6 +6,7 @@ import config from '../config';
 import NotFoundModule from '../modules/NotFound/Loadable';
 import DashboardHomeModule from '../modules/Dashboard/pages/home/Loadable';
 import DashboardStateModule from '../modules/Dashboard/pages/state/Loadable';
+import PlaceModule from '../modules/Place/pages/Loadable';
 import Header from '../components/molecules/Header';
 import Footer from '../components/molecules/Footer';
 import LocaleContext from '../locale/localeContext';
@@ -48,6 +49,11 @@ const Router = ({ history }) => {
               exact
               path={config.DASHBOARD_STATE_PAGE}
               render={(props) => <DashboardStateModule {...props} />}
+            />
+            <Route
+              exact
+              path={config.UNSAFE_PLACES_PAGE}
+              render={(props) => <PlaceModule {...props} />}
             />
             <Route path="" render={(props) => <NotFoundModule {...props} />} />
           </Switch>

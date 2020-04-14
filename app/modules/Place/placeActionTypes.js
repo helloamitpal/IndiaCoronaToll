@@ -1,0 +1,1 @@
+export const GET_TRAVEL_HISTORY = 'GET_TRAVEL_HISTORY';
