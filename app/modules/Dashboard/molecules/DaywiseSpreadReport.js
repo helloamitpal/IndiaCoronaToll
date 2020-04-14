@@ -1,5 +1,4 @@
 import React from 'react';
-import { MDBContainer } from 'mdbreact';
 import { Line } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 
@@ -13,9 +12,9 @@ const DaywiseSpreadReport = ({ series, kpi }) => {
     <div className="daywise-spread-container">
       <KPI data={kpi} />
       <h2>{translate('dashboard.dailyCases')}</h2>
-      <MDBContainer className="chart-container">
+      <div className="chart-container">
         <Line data={series} options={{ responsive: true }} />
-      </MDBContainer>
+      </div>
     </div>
   );
 };

@@ -11,10 +11,11 @@ const KPI = ({ data }) => {
         {
           Object.entries(data).map(([key, { growth, count, label, growthCount }]) => (
             <li key={`kpi-${key}`} className={`${growth}`}>
-              <span>Total</span>
+              <span>{translate('common.total')}</span>
               <h3>{count}</h3>
               <span>{label}</span>
               <span className="bold">{growthCount}</span>
+              <span>{translate('common.new')}</span>
             </li>
           ))
         }

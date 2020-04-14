@@ -57,28 +57,28 @@ const getKPIData = (caseSeries) => {
     totalrecovered: yesterdayTotalrecovered
   } = caseSeries[caseSeries.length - 2];
 
-  const confirmedCount = totalconfirmed - yesterdayTotalconfirmed;
-  const deceasedCount = totaldeceased - yesterdayTotaldeceased;
-  const recoveredCount = totalrecovered - yesterdayTotalrecovered;
+  const confirmedCount = +(totalconfirmed) - +(yesterdayTotalconfirmed);
+  const deceasedCount = +(totaldeceased) - +(yesterdayTotaldeceased);
+  const recoveredCount = +(totalrecovered) - +(yesterdayTotalrecovered);
 
   return {
     totalconfirmed: {
       count: totalconfirmed,
       growthCount: `${confirmedCount > 0 ? '+' : '-'}${confirmedCount}`,
       label: translate('dashboard.confirmed'),
-      growth: getGrowthRate(totalconfirmed, yesterdayTotalconfirmed)
+      growth: getGrowthRate(+totalconfirmed, +yesterdayTotalconfirmed)
     },
     totaldeceased: {
       count: totaldeceased,
       growthCount: `${deceasedCount > 0 ? '+' : '-'}${deceasedCount}`,
       label: translate('dashboard.deceased'),
-      growth: getGrowthRate(totaldeceased, yesterdayTotaldeceased)
+      growth: getGrowthRate(+totaldeceased, +yesterdayTotaldeceased)
     },
     totalrecovered: {
       count: totalrecovered,
       growthCount: `${recoveredCount > 0 ? '+' : '-'}${recoveredCount}`,
       label: translate('dashboard.recovered'),
-      growth: getGrowthRate(totalrecovered, yesterdayTotalrecovered, true)
+      growth: getGrowthRate(+totalrecovered, +yesterdayTotalrecovered, true)
     }
   };
 };

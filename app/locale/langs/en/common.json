@@ -7,5 +7,7 @@
   "somethingWentWrongDesc": "Sorry for the inconvenience caused. <br /> We are working on it. <br /> Stay connected.",
   "pageNotFound": "Page Not Found!!!",
   "tryAgain": "Please try again!",
-  "failed": "Something went wrong. Please try again after some time."
+  "failed": "Something went wrong. Please try again after some time.",
+  "new": "New",
+  "total": "Total"
 }
