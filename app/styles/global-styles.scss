@@ -7,14 +7,6 @@ body,
   height: 100%;
 }
 
-.link {
-  cursor: pointer;
-}
-
-.mt-20 {
-  margin-top: 20px;
-}
-
 button {
   cursor: pointer;
 }
@@ -25,12 +17,8 @@ button {
 }
 
 .container {
-  max-width: 800px;
-}
-
-nav .brand-logo {
-  transform: none;
-  left: 0;
+  max-width: 700px;
+  width: 100%;
 }
 
 .bold {
@@ -46,17 +34,4 @@ nav .brand-logo {
   overflow: auto;
   width: 100%;
   box-sizing: content-box;
-}
-
-@media only screen and (min-width: 500px) {
-  .hide-on-med-and-down {
-    display: block !important;
-  }
-}
-
-@media only screen and (max-width: 499px) {
-  nav .brand-logo {
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
