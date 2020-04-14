@@ -6,7 +6,6 @@ import translate from '../../../locale';
 const KPI = ({ data }) => {
   return (
     <div className="kpi-container">
-      <h2>{translate('dashboard.asOfToday')}</h2>
       <ul>
         {
           Object.entries(data).map(([key, { growth, count, label, growthCount }]) => (

@@ -105,6 +105,15 @@ const getStateChartData = (statewiseData) => {
   }));
 };
 
+const getTestingRecords = (testData) => {
+  return testData.map(({ totalpositivecases, totalsamplestested, updatetimestamp }) => ({
+    totalpositivecases,
+    totalsamplestested,
+    percentage: ((Number(totalpositivecases) / Number(totalsamplestested)) * 100).toFixed(1),
+    date: moment(updatetimestamp, config.INPUT_DATE_FORMAT).format(config.ALTERNATTE_DATE_FORMAT)
+  }));
+};
+
 const dashboardService = {
   getSynthesizedInfo: ({ cases_time_series: caseSeries, statewise, tested }) => {
     const infoObj = {};
@@ -114,6 +123,7 @@ const dashboardService = {
     infoObj.kpi = getKPIData(caseSeries);
     infoObj.stateReports = getStatewiseReport(stateWiseData);
     infoObj.stateChartSeries = getStateChartData(stateWiseData);
+    infoObj.testingRecords = getTestingRecords(tested);
 
     return infoObj;
   }

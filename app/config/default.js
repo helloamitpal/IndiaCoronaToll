@@ -4,5 +4,6 @@ export default {
   FALLBACK_LANGUAGE: 'en',
   DATE_FORMAT: 'DD/MM/YYYY h:mm A',
   INPUT_DATE_FORMAT: 'DD/MM/YYYY h:mm:s',
+  ALTERNATTE_DATE_FORMAT: 'DD/MM/YYYY',
   EMAIL_PATTERN: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 };

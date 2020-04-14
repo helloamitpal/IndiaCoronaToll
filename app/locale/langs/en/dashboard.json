@@ -3,13 +3,14 @@
   "confirmed": "Confirmed",
   "deceased": "Death",
   "recovered": "Recovered",
-  "asOfToday": "As of Today",
-  "dailyCases": "Daily Cases",
-  "stateReports": "State Reports",
+  "stateReports": "State Wise Reports",
   "recovery": "Recovered: ${COUNT} (${PERCENTAGE}%)",
   "lastUpdated": "Last updated on ${DATE}",
   "confirmedCount": "Confirmed: ${COUNT}",
   "activeCount": "Active: ${COUNT} (${PERCENTAGE}%)",
   "deathCount": "Death: ${COUNT} (${PERCENTAGE}%)",
-  "stateActiveCount": "State wise confirmed cases"
+  "stateActiveCount": "State wise confirmed cases",
+  "positiveCases": "${COUNT} (${PERCENTAGE}%)",
+  "positiveCaseTitle": "Total Positive cases",
+  "sampleTestTitle": "Total Sample Test"
 }

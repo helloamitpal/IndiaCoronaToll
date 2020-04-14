@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .state-report-container {
   margin-top: 1em;
 
@@ -11,7 +13,7 @@
       width: 100%;
 
       &:not(:last-child) {
-        border-bottom: 1px solid #9e9e9e;
+        border-bottom: 1px solid $row-bordercolor;
       }
 
       h3 {

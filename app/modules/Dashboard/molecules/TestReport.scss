@@ -1,0 +1,42 @@
+@import './colors.scss';
+
+.test-report-container {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 3em;
+  width: 90%;
+  box-shadow: 0 0 5px 1px $shadowcolor;
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0;
+    color: $alternate-font-color;
+  }
+
+  a {
+    color: $alternate-font-color;
+  }
+
+  h4 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0.4em 0;
+  }
+
+  .date-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+  }
+
+  .reports {
+    text-align: center;
+    padding: 1em;
+  }
+}

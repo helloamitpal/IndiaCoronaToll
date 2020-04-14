@@ -9,6 +9,7 @@ import LoadingIndicator from '../../../../components/atoms/LoadingIndicator';
 import ChoroplethMap from '../../../../components/atoms/ChoroplethMap';
 import translate from '../../../../locale';
 import DaywiseSpreadReport from '../../molecules/DaywiseSpreadReport';
+import TestReport from '../../molecules/TestReport';
 import StateReport from '../../molecules/StateReport';
 
 import '../../Dashboard.scss';
@@ -25,8 +26,11 @@ const DashboardHomePage = ({
   const title = translate('dashboard.title');
 
   useEffect(() => {
-    // dashboardActions.getTravelHistory();
     dashboardActions.getOverallInfo();
+  }, [dashboardActions]);
+
+  useEffect(() => {
+    // dashboardActions.getTravelHistory();
   }, [dashboardActions]);
 
   const head = (
@@ -46,6 +50,7 @@ const DashboardHomePage = ({
         overallInfo && (
           <Fragment>
             <DaywiseSpreadReport kpi={overallInfo.kpi} series={overallInfo.chartSeries} />
+            <TestReport series={overallInfo.testingRecords} />
             <h2>{translate('dashboard.stateReports')}</h2>
             <ChoroplethMap series={overallInfo.stateChartSeries} />
             <StateReport reports={overallInfo.stateReports} />
