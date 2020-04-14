@@ -8,17 +8,37 @@
     top: 8px;
   }
 
-  .sidenav .divider {
-    margin: 0;
+  .brand-logo {
+    left: 10px;
+    transform: translateX(10px);
   }
 
-  .sidenav-trigger {
+  #nav-mobile {
+    display: block !important;
+  }
+
+  .sidenav .divider {
     margin: 0;
   }
 }
 
-@media only screen and (min-width: 500px) {
-  .sidenav-trigger {
-    display: none;
+@media only screen and (max-width: 440px) {
+  .header-container {
+    #nav-mobile {
+      display: none !important;
+    }
+
+    .brand-logo {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media only screen and (min-width: 441px) {
+  .header-container {
+    .sidenav-trigger {
+      display: none;
+    }
   }
 }
