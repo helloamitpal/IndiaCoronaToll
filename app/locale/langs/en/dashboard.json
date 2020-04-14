@@ -1,5 +1,5 @@
 {
-  "title": "Home",
+  "title": "ICT Home",
   "confirmed": "Confirmed",
   "deceased": "Death",
   "recovered": "Recovered",
@@ -12,5 +12,7 @@
   "stateActiveCount": "State wise confirmed cases",
   "positiveCases": "${COUNT} (${PERCENTAGE}%)",
   "positiveCaseTitle": "Total Positive cases",
-  "sampleTestTitle": "Total Sample Test"
+  "sampleTestTitle": "Total Sample Test",
+  "stateTitle": "${STATE} confirmed cases",
+  "districtTitle": "District wise cases"
 }

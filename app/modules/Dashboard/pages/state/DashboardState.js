@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet';
@@ -10,18 +10,31 @@ import translate from '../../../../locale';
 
 import '../../Dashboard.scss';
 
-const DashboardListPage = ({
-  dashboardState: { loading, errors, dashboardDetails },
-  dashboardActions
+const DashboardStatePage = ({
+  dashboardState: { loading, errors, stateRecords },
+  dashboardActions,
+  location,
+  history
 }) => {
+  const stateData = location && location.state && location.state.stateData;
+  const title = translate('dashboard.stateTitle');
+  const { districtData, state } = stateRecords || {};
+
+  if (!stateData) {
+    history.push('');
+  }
+
+  useEffect(() => {
+    if (stateData) {
+      dashboardActions.getStateRecords(stateData.state);
+    }
+  }, [dashboardActions, stateData]);
+
   const head = (
-    <Helmet key="user-list-page">
-      <title>{translate('dashboard.title')}</title>
-      <meta property="og:title" content="Dashboard list" />
-      <meta
-        name="description"
-        content="Get list of dashboards in TIVO"
-      />
+    <Helmet key="dashboard-state-page">
+      <title>{title}</title>
+      <meta property="og:title" content={title} />
+      <meta name="description" content={title} />
       <meta name="robots" content="index, follow" />
     </Helmet>
   );
@@ -30,7 +43,39 @@ const DashboardListPage = ({
     <div className="dashboard-page-container">
       {head}
       {loading && <LoadingIndicator />}
-      <h1>{translate('dashboard.title')}</h1>
+      {
+        districtData && stateData && (
+          <Fragment>
+            <h1>{translate('dashboard.stateTitle', { STATE: state }) }</h1>
+            <section className="state-kpi-container">
+              <div>
+                <h3>{stateData.active}</h3>
+                <span>{translate('dashboard.confirmed')}</span>
+              </div>
+              <div>
+                <h3>{stateData.deaths}</h3>
+                <span>{translate('dashboard.deceased')}</span>
+              </div>
+              <div>
+                <h3>{stateData.recovered}</h3>
+                <span>{translate('dashboard.recovered')}</span>
+              </div>
+            </section>
+            <h2 className="aligned-left">{translate('dashboard.districtTitle')}</h2>
+            <ul className="district-list">
+              {
+                districtData.map(({ district, confirmed }) => (
+                  <li>
+                    <span>{district}</span>
+                    :&nbsp;
+                    <span className="bold">{confirmed}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </Fragment>
+        )
+      }
     </div>
   );
 };
@@ -43,14 +88,18 @@ const mapDispatchToProps = (dispatch) => ({
   dashboardActions: bindActionCreators(dashboardActionCreator, dispatch)
 });
 
-DashboardListPage.propTypes = {
+DashboardStatePage.propTypes = {
   dashboardState: PropTypes.object,
-  dashboardActions: PropTypes.object
+  dashboardActions: PropTypes.object,
+  location: PropTypes.object,
+  history: PropTypes.object
 };
 
-DashboardListPage.defaultProps = {
+DashboardStatePage.defaultProps = {
   dashboardState: {},
-  dashboardActions: {}
+  dashboardActions: {},
+  location: {},
+  history: {}
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardListPage);
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardStatePage);

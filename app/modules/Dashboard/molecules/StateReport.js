@@ -12,7 +12,7 @@ const StateReport = ({ reports, history }) => {
     evt.preventDefault();
     history.push({
       pathname: config.DASHBOARD_STATE_PAGE,
-      state: { ...stateObj }
+      state: { stateData: { ...stateObj } }
     });
   };
 

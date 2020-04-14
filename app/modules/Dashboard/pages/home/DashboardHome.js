@@ -29,12 +29,8 @@ const DashboardHomePage = ({
     dashboardActions.getOverallInfo();
   }, [dashboardActions]);
 
-  useEffect(() => {
-    // dashboardActions.getTravelHistory();
-  }, [dashboardActions]);
-
   const head = (
-    <Helmet key="user-list-page">
+    <Helmet key="dashboard-home-page">
       <title>{title}</title>
       <meta property="og:title" content={title} />
       <meta name="description" content={title} />
