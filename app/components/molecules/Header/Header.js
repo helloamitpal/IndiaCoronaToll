@@ -20,10 +20,10 @@ const Header = ({ onChangeLocale }) => {
       <nav className="red">
         <div className="container">
           <div className="nav-wrapper">
-            <a href={config.USER_LIST_PAGE} className="brand-logo">
+            <a href={config.DASHBOARD_PAGE} className="brand-logo">
               {translate('common.appName')}
             </a>
-            <LocaleSelector className="right" onChangeLocale={onChangeLocale} />
+            {/* <LocaleSelector className="right" onChangeLocale={onChangeLocale} /> */}
             <span onClick={toggleMenu} className="sidenav-trigger">
               <i className="material-icons">menu</i>
             </span>
@@ -44,41 +44,36 @@ const Header = ({ onChangeLocale }) => {
                 <div className="divider" />
               </li>
               <li>
-                <Link to={config.USER_LIST_PAGE} className="item" onClick={toggleMenu}>
+                <Link to={config.DASHBOARD_PAGE} className="item" onClick={toggleMenu}>
                   {translate('common.home')}
                 </Link>
               </li>
               <li>
-                <Link to={config.USER_CREATE_PAGE} className="item" onClick={toggleMenu}>
-                  {translate('user.createUser')}
+                <Link to={config.UNSAFE_PLACES_PAGE} className="item" onClick={toggleMenu}>
+                  {translate('history.unsafePlaces')}
                 </Link>
               </li>
               <li>
-                <Link to={config.USER_LIST_PAGE} className="item" onClick={toggleMenu}>
-                  {translate('user.searchUser')}
-                </Link>
-              </li>
-              <li>
-                <Link to={config.DASHBOARD_PAGE} className="item" onClick={toggleMenu}>
-                  {translate('dashboard.title')}
-                </Link>
+                <a href={config.WORLDWIDE_CASE_URL} target="_blank" rel="noopener noreferrer" className="item" onClick={toggleMenu}>
+                  {translate('common.worldwideTitle')}
+                </a>
               </li>
             </ul>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
                 <Link to={config.DASHBOARD_PAGE} className="item">
-                  {translate('dashboard.title')}
+                  {translate('common.home')}
                 </Link>
               </li>
               <li>
-                <Link to={config.USER_CREATE_PAGE} className="item">
-                  {translate('user.createUser')}
+                <Link to={config.UNSAFE_PLACES_PAGE} className="item">
+                  {translate('history.unsafePlaces')}
                 </Link>
               </li>
               <li>
-                <Link to={config.USER_LIST_PAGE} className="item icon">
-                  <span className="material-icons">search</span>
-                </Link>
+                <a href={config.WORLDWIDE_CASE_URL} target="_blank" rel="noopener noreferrer" className="item">
+                  {translate('common.worldwideTitle')}
+                </a>
               </li>
             </ul>
           </div>

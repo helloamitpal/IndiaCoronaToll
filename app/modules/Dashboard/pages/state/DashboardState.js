@@ -46,7 +46,7 @@ const DashboardStatePage = ({
       {
         districtData && stateData && (
           <Fragment>
-            <h1>{translate('dashboard.stateTitle', { STATE: state }) }</h1>
+            <h1>{translate('dashboard.stateSubTitle', { STATE: state }) }</h1>
             <section className="state-kpi-container">
               <div>
                 <h3>{stateData.active}</h3>
