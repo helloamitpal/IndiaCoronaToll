@@ -6,9 +6,10 @@ import PropTypes from 'prop-types';
 
 import * as dashboardActionCreator from '../../dashboardActionCreator';
 import LoadingIndicator from '../../../../components/atoms/LoadingIndicator';
+import ChoroplethMap from '../../../../components/atoms/ChoroplethMap';
 import translate from '../../../../locale';
 import DaywiseSpreadReport from '../../molecules/DaywiseSpreadReport';
-import StateChart from '../../molecules/StateReport';
+import StateReport from '../../molecules/StateReport';
 
 import '../../Dashboard.scss';
 
@@ -45,7 +46,9 @@ const DashboardHomePage = ({
         overallInfo && (
           <Fragment>
             <DaywiseSpreadReport kpi={overallInfo.kpi} series={overallInfo.chartSeries} />
-            <StateChart reports={overallInfo.stateReports} />
+            <h2>{translate('dashboard.stateReports')}</h2>
+            <ChoroplethMap series={overallInfo.stateChartSeries} />
+            <StateReport reports={overallInfo.stateReports} />
           </Fragment>
         )
       }

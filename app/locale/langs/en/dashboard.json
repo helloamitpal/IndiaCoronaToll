@@ -10,5 +10,6 @@
   "lastUpdated": "Last updated on ${DATE}",
   "confirmedCount": "Confirmed: ${COUNT}",
   "activeCount": "Active: ${COUNT} (${PERCENTAGE}%)",
-  "deathCount": "Death: ${COUNT} (${PERCENTAGE}%)"
+  "deathCount": "Death: ${COUNT} (${PERCENTAGE}%)",
+  "stateActiveCount": "State wise confirmed cases"
 }

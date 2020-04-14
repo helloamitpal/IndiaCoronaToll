@@ -18,7 +18,6 @@ const StateReport = ({ reports, history }) => {
 
   return (
     <div className="state-report-container">
-      <h2>{translate('dashboard.stateReports')}</h2>
       <ul>
         {
           reports.map((stateObj) => {
@@ -37,7 +36,7 @@ const StateReport = ({ reports, history }) => {
 
             return (
               <li key={`state-row-${statecode}`}>
-                <a href onClick={(evt) => gotoSatePage(evt, stateObj)}><h3>{state}</h3></a>
+                <a href="" onClick={(evt) => gotoSatePage(evt, stateObj)}><h3>{state}</h3></a>
                 <div className="italics">{`${translate('dashboard.lastUpdated', { DATE: lastupdatedtime })}`}</div>
                 <div>{`${translate('dashboard.confirmedCount', { COUNT: confirmed })}`}</div>
                 <div>{`${translate('dashboard.activeCount', { COUNT: active, PERCENTAGE: activePerTotal })}`}</div>

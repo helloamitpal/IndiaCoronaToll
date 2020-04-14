@@ -97,13 +97,23 @@ const getStatewiseReport = (statewiseData) => {
   }));
 };
 
+const getStateChartData = (statewiseData) => {
+  return statewiseData.map(({ confirmed, state, statecode }) => ({
+    id: statecode,
+    state,
+    value: Number(confirmed) || 0
+  }));
+};
+
 const dashboardService = {
   getSynthesizedInfo: ({ cases_time_series: caseSeries, statewise, tested }) => {
     const infoObj = {};
+    const stateWiseData = statewise.slice(1);
 
     infoObj.chartSeries = getDailyChartData(caseSeries.slice(0, -1));
     infoObj.kpi = getKPIData(caseSeries);
-    infoObj.stateReports = getStatewiseReport(statewise.slice(1));
+    infoObj.stateReports = getStatewiseReport(stateWiseData);
+    infoObj.stateChartSeries = getStateChartData(stateWiseData);
 
     return infoObj;
   }
