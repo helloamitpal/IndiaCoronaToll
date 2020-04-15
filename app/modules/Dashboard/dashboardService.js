@@ -16,20 +16,51 @@ const getGrowthRate = (currentVal, prevVal, reversed = false) => {
 };
 
 const getDailyChartData = (caseSeries) => {
+  const confirmedLineColor = '#e58d30';
+  const deathLineColor = '#ad1111';
+  const recoveredLineColor = '#16af49';
+
   return caseSeries.reduce((acc, { dailyconfirmed, dailydeceased, dailyrecovered, date }) => {
     acc.datasets[0].data = [...acc.datasets[0].data, Number(dailyconfirmed)];
     acc.datasets[1].data = [...acc.datasets[1].data, Number(dailydeceased)];
     acc.datasets[2].data = [...acc.datasets[2].data, Number(dailyrecovered)];
-    acc.options.xaxis.categories = [...acc.options.xaxis.categories, date];
+    acc.options.xaxis.categories = [...acc.options.xaxis.categories, moment(date, config.ALTERNATE_INPUT_DATE_FORMAT).format()];
 
     return acc;
   }, {
     options: {
       chart: {
-        id: 'dailycaselinechart'
+        id: 'dailycaselinechart',
+        toolbar: {
+          show: true,
+          tools: {
+            pan: false,
+            selection: false,
+            zoom: false,
+            reset: false
+          }
+        }
       },
+      stroke: {
+        width: 2
+      },
+      colors: [confirmedLineColor, deathLineColor, recoveredLineColor],
       xaxis: {
-        categories: []
+        categories: [],
+        type: 'datetime',
+        min: moment(caseSeries[0].date, config.ALTERNATE_INPUT_DATE_FORMAT).format(),
+        max: moment(caseSeries[caseSeries.length - 1].date, config.ALTERNATE_INPUT_DATE_FORMAT).format(),
+        labels: {
+          datetimeFormatter: {
+            year: 'yyyy',
+            month: 'MMM yyyy',
+            day: 'dd MMM'
+          }
+        }
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'left'
       }
     },
     datasets: [{
@@ -43,38 +74,6 @@ const getDailyChartData = (caseSeries) => {
       data: []
     }]
   });
-
-  // const seriesConfig = {
-  //   fill: true,
-  //   data: []
-  // };
-  //
-  // return caseSeries.reduce((acc, { dailyconfirmed, dailydeceased, dailyrecovered, date }) => {
-  //   acc.datasets[0].data = [...acc.datasets[0].data, Number(dailyconfirmed)];
-  //   acc.datasets[1].data = [...acc.datasets[1].data, Number(dailydeceased)];
-  //   acc.datasets[2].data = [...acc.datasets[2].data, Number(dailyrecovered)];
-  //   acc.labels = [...acc.labels, date];
-  //
-  //   return acc;
-  // }, {
-  //   labels: [],
-  //   datasets: [{
-  //     label: translate('dashboard.confirmed'),
-  //     backgroundColor: 'rgba(225, 0, 0, .2)',
-  //     borderColor: '#ad1111',
-  //     ...seriesConfig
-  //   }, {
-  //     label: translate('dashboard.deceased'),
-  //     backgroundColor: 'rgba(242, 233, 135, .2)',
-  //     borderColor: '#e58d30',
-  //     ...seriesConfig
-  //   }, {
-  //     label: translate('dashboard.recovered'),
-  //     backgroundColor: 'rgba(22, 175, 73, .3)',
-  //     borderColor: '#16af49',
-  //     ...seriesConfig
-  //   }]
-  // });
 };
 
 const getKPIData = (caseSeries) => {
@@ -138,7 +137,7 @@ const getTestingRecords = (testData) => {
     totalpositivecases,
     totalsamplestested,
     percentage: ((Number(totalpositivecases) / Number(totalsamplestested)) * 100).toFixed(1),
-    date: moment(updatetimestamp, config.INPUT_DATE_FORMAT).format(config.ALTERNATTE_DATE_FORMAT)
+    date: moment(updatetimestamp, config.INPUT_DATE_FORMAT).format(config.ALTERNATE_DATE_FORMAT)
   }));
 };
 

@@ -12,7 +12,7 @@ const LinearGradient = ({ data: { fromColor, toColor, min, max } }) => {
         <span>{min}</span>
         <span>{max}</span>
       </div>
-      <div className="box mt-10" style={{ ...gradientStyle }} />
+      <div className="box" style={{ ...gradientStyle }} />
     </div>
   );
 };

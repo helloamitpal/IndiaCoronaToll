@@ -1,12 +1,4 @@
 .choropleth-map-container {
-  // height: 560px;
-
-  // svg {
-  //   transform: scale(2);
-  //   transform-origin: top;
-  //   height: 300px;
-  // }
-
   .gradient-container {
     .gradient {
       display: flex;
@@ -16,10 +8,8 @@
     .box {
       width: 180px;
       margin: auto;
-    }
-
-    .mt-10 {
-      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.8em;
     }
   }
 }
