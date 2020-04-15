@@ -65,6 +65,7 @@
     "js-cookie": "^2.2.1",
     "leaflet": "^1.6.0",
     "lodash": "^4.17.11",
+    "materialize-css": "^1.0.0",
     "mdbreact": "^4.25.5",
     "minimist": "1.2.3",
     "moment": "^2.24.0",
