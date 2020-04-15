@@ -1,14 +1,25 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import translate from '../../locale';
 
-const NotFoundPage = () => {
+const AboutusPage = () => {
+  const title = translate('common.aboutus');
+
+  const head = (
+    <Helmet key="aboutus-page">
+      <title>{title}</title>
+      <meta property="og:title" content={title} />
+      <meta name="description" content={title} />
+      <meta name="robots" content="index, follow" />
+    </Helmet>
+  );
+
   return (
-    <div className="ui container">
-      <h1>{translate('common.pageNotFound')}</h1>
-      <p>{translate('common.tryAgain')}</p>
+    <div className="aboutus-page-container">
+      {head}
     </div>
   );
 };
 
-export default NotFoundPage;
+export default AboutusPage;

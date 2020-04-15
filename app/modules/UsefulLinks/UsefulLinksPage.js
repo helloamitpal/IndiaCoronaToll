@@ -6,7 +6,7 @@ import config from '../../config';
 
 import './UsefulLinks.scss';
 
-const NotFoundPage = () => {
+const UsefulLinksPage = () => {
   const title = translate('common.usefulLinks');
 
   const head = (
@@ -43,4 +43,4 @@ const NotFoundPage = () => {
   );
 };
 
-export default NotFoundPage;
+export default UsefulLinksPage;

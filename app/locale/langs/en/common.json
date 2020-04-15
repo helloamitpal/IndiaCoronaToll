@@ -2,7 +2,6 @@
   "appName": "ICT",
   "menu": "Menu",
   "home": "Home",
-  "copyright": "© 2000-2030, All rights reserved.",
   "somethingWentWrongTitle": "Something went wrong",
   "somethingWentWrongDesc": "Sorry for the inconvenience caused. <br /> We are working on it. <br /> Stay connected.",
   "pageNotFound": "Page Not Found!!!",
@@ -16,5 +15,6 @@
   "healthMinistry": "Ministry of Health and Family welfare, Govt of India",
   "who": "WHO: Covid-19",
   "cdc": "Centers for Disease Control and Prevention, Govt of India",
-  "crowdsource": "Crowdsourced list of resources and essentials across India"
+  "crowdsource": "Crowdsourced list of resources and essentials across India",
+  "aboutus": "About us"
 }
