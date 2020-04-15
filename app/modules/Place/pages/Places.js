@@ -14,7 +14,7 @@ import AddressDetails from '../molecules/AddressDetails';
 import '../Place.scss';
 
 const PlacePage = ({ placeState: { loading, errors, travelHistory }, placeActions }) => {
-  const title = translate('dashboard.title');
+  const title = translate('place.unsafePlaces');
   const [address, setAddress] = useState(travelHistory[0]);
 
   useEffect(() => {

@@ -31,7 +31,7 @@ const StateReport = ({ reports, history }) => {
               active,
               deathsPerTotal,
               activePerTotal,
-              recoverTotal
+              recoverPerTotal
             } = stateObj;
 
             return (
@@ -40,7 +40,7 @@ const StateReport = ({ reports, history }) => {
                 <div className="italics">{`${translate('dashboard.lastUpdated', { DATE: lastupdatedtime })}`}</div>
                 <div>{`${translate('dashboard.confirmedCount', { COUNT: confirmed })}`}</div>
                 <div>{`${translate('dashboard.activeCount', { COUNT: active, PERCENTAGE: activePerTotal })}`}</div>
-                <div>{`${translate('dashboard.recovery', { COUNT: recovered, PERCENTAGE: recoverTotal })}`}</div>
+                <div>{`${translate('dashboard.recovery', { COUNT: recovered, PERCENTAGE: recoverPerTotal })}`}</div>
                 <div>{`${translate('dashboard.deathCount', { COUNT: deaths, PERCENTAGE: deathsPerTotal })}`}</div>
               </li>
             );

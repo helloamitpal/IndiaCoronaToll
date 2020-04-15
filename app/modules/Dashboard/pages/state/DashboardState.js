@@ -49,16 +49,18 @@ const DashboardStatePage = ({
             <h1>{translate('dashboard.stateSubTitle', { STATE: state }) }</h1>
             <section className="state-kpi-container">
               <div>
-                <h3>{stateData.active}</h3>
+                <h3>{stateData.confirmed}</h3>
                 <span>{translate('dashboard.confirmed')}</span>
               </div>
               <div>
                 <h3>{stateData.deaths}</h3>
                 <span>{translate('dashboard.deceased')}</span>
+                <h3>{translate('dashboard.percentage', { PERCENTAGE: stateData.deathsPerTotal })}</h3>
               </div>
               <div>
                 <h3>{stateData.recovered}</h3>
                 <span>{translate('dashboard.recovered')}</span>
+                <h3>{translate('dashboard.percentage', { PERCENTAGE: stateData.recoverPerTotal })}</h3>
               </div>
             </section>
             <h2 className="aligned-left">{translate('dashboard.districtTitle')}</h2>

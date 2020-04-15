@@ -12,8 +12,9 @@
   "stateActiveCount": "State wise confirmed cases",
   "positiveCases": "${COUNT} (${PERCENTAGE}%)",
   "positiveCaseTitle": "Total Positive cases",
-  "sampleTestTitle": "Total Sample Test",
+  "sampleTestTitle": "Nationwide Total Sample Test",
   "stateTitle": "State level cases",
   "stateSubTitle": "${STATE} confirmed cases",
-  "districtTitle": "District wise cases"
+  "districtTitle": "District wise cases",
+  "percentage": "${PERCENTAGE}%"
 }

@@ -93,7 +93,7 @@ const getStatewiseReport = (statewiseData) => {
     lastupdatedtime: moment(lastupdatedtime, config.INPUT_DATE_FORMAT).format(config.DATE_FORMAT),
     deathsPerTotal: confirmed > 0 ? ((deaths / confirmed) * 100).toFixed(1) : 0,
     activePerTotal: confirmed > 0 ? ((active / confirmed) * 100).toFixed(1) : 0,
-    recoverTotal: confirmed > 0 ? ((recovered / confirmed) * 100).toFixed(1) : 0
+    recoverPerTotal: confirmed > 0 ? ((recovered / confirmed) * 100).toFixed(1) : 0
   }));
 };
 
