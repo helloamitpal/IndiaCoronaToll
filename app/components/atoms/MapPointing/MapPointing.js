@@ -1,8 +1,16 @@
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 import React from 'react';
 import PropTypes from 'prop-types';
+import L from 'leaflet';
+
+import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
+import iconUrl from 'leaflet/dist/images/marker-icon.png';
+import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
 
 import './MapPointing.scss';
+
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({ iconRetinaUrl, iconUrl, shadowUrl });
 
 const MapPointing = ({ point: { position, zoom, address } }) => {
   return (
@@ -21,7 +29,11 @@ const MapPointing = ({ point: { position, zoom, address } }) => {
 };
 
 MapPointing.propTypes = {
-  point: PropTypes.object.isRequired
+  point: PropTypes.shape({
+    position: PropTypes.array.isRequired,
+    zoom: PropTypes.number.isRequired,
+    address: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default MapPointing;

@@ -4,11 +4,16 @@
   padding: 1em;
   box-sizing: border-box;
 
-  h2 {
-    font-size: 2em;
-    font-weight: bold;
+  p {
+    font-size: 1em;
     margin: 1em 0;
-    text-align: center;
-    word-break: break-all;
+  }
+
+  .select-box {
+    margin-bottom: 1em;
+
+    div[class *= 'menu'] {
+      z-index: 99999;
+    }
   }
 }
