@@ -117,10 +117,10 @@ const getStatewiseReport = (statewiseData) => {
     deaths,
     confirmed,
     active,
-    lastupdatedtime: moment(lastupdatedtime, config.INPUT_DATE_FORMAT).format(config.DATE_FORMAT),
-    deathsPerTotal: confirmed > 0 ? ((deaths / confirmed) * 100).toFixed(1) : 0,
-    activePerTotal: confirmed > 0 ? ((active / confirmed) * 100).toFixed(1) : 0,
-    recoverPerTotal: confirmed > 0 ? ((recovered / confirmed) * 100).toFixed(1) : 0
+    lastupdatedtime: moment(lastupdatedtime, config.INPUT_DATE_FORMAT).format(config.ANOTHER_DATE_FORMAT),
+    deathsPerTotal: confirmed > 0 ? ((deaths / confirmed) * 100).toFixed(0) : 0,
+    activePerTotal: confirmed > 0 ? ((active / confirmed) * 100).toFixed(0) : 0,
+    recoverPerTotal: confirmed > 0 ? ((recovered / confirmed) * 100).toFixed(0) : 0
   }));
 };
 
@@ -136,7 +136,7 @@ const getTestingRecords = (testData) => {
   return testData.map(({ totalpositivecases, totalsamplestested, updatetimestamp }) => ({
     totalpositivecases,
     totalsamplestested,
-    percentage: ((Number(totalpositivecases) / Number(totalsamplestested)) * 100).toFixed(1),
+    percentage: ((Number(totalpositivecases) / Number(totalsamplestested)) * 100).toFixed(0),
     date: moment(updatetimestamp, config.INPUT_DATE_FORMAT).format(config.ALTERNATE_DATE_FORMAT)
   }));
 };
