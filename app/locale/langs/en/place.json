@@ -5,5 +5,5 @@
   "address": "${LOCATION}Location",
   "timefrom": "Approximate Travel timing",
   "timeto": "Till",
-  "datasource": "Data source"
+  "datasource": "Source"
 }

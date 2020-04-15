@@ -54,9 +54,9 @@ const Header = ({ onChangeLocale }) => {
                 </Link>
               </li>
               <li>
-                <a href={config.WORLDWIDE_CASE_URL} target="_blank" rel="noopener noreferrer" className="item" onClick={toggleMenu}>
-                  {translate('common.worldwideTitle')}
-                </a>
+                <Link to={config.USEFUL_LINKS_PAGE} className="item" onClick={toggleMenu}>
+                  {translate('common.usefulLinks')}
+                </Link>
               </li>
             </ul>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
@@ -71,9 +71,9 @@ const Header = ({ onChangeLocale }) => {
                 </Link>
               </li>
               <li>
-                <a href={config.WORLDWIDE_CASE_URL} target="_blank" rel="noopener noreferrer" className="item">
-                  {translate('common.worldwideTitle')}
-                </a>
+                <Link to={config.USEFUL_LINKS_PAGE} className="item">
+                  {translate('common.usefulLinks')}
+                </Link>
               </li>
             </ul>
           </div>

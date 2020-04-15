@@ -8,7 +8,12 @@ import './AddressDetails.scss';
 const AddressDetails = ({ address: { modeoftravel, datasource, timefrom, timeto, address, accuracylocation } }) => {
   return (
     <div className="address-details-container">
-      <p>{translate('place.address', { LOCATION: accuracylocation ? `${accuracylocation} ` : '' })}</p>
+      <p>
+        {translate('place.address', { LOCATION: accuracylocation ? `${accuracylocation} ` : '' })}
+        {datasource ? (
+          <a href={datasource} target="_blank" rel="noopener noreferrer">{translate('place.datasource')}</a>
+        ) : null}
+      </p>
       <h4>{address}</h4>
       {modeoftravel ? (
         <Fragment>
@@ -28,9 +33,6 @@ const AddressDetails = ({ address: { modeoftravel, datasource, timefrom, timeto,
           )}
         </Fragment>
       )}
-      {datasource ? (
-        <a href={datasource} target="_blank" rel="noopener noreferrer">{translate('place.datasource')}</a>
-      ) : null}
     </div>
   );
 };

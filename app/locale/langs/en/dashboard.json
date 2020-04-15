@@ -16,5 +16,6 @@
   "stateTitle": "State level cases",
   "stateSubTitle": "${STATE} confirmed cases",
   "districtTitle": "District wise cases",
-  "percentage": "${PERCENTAGE}%"
+  "percentage": "${PERCENTAGE}%",
+  "liveRecordTitle": "View live patient records"
 }

@@ -10,5 +10,11 @@
   "failed": "Something went wrong. Please try again after some time.",
   "new": "New",
   "total": "Total",
-  "worldwideTitle": "Worldwide cases"
+  "worldwideTitle": "Worldwide",
+  "usefulLinks": "Useful Links",
+  "helpline": "Helpline numbers",
+  "healthMinistry": "Ministry of Health and Family welfare, Govt of India",
+  "who": "WHO: Covid-19",
+  "cdc": "Centers for Disease Control and Prevention, Govt of India",
+  "crowdsource": "Crowdsourced list of resources and essentials across India"
 }

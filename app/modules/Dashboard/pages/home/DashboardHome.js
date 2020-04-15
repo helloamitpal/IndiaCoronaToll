@@ -11,6 +11,7 @@ import translate from '../../../../locale';
 import DaywiseSpreadReport from '../../molecules/DaywiseSpreadReport';
 import TestReport from '../../molecules/TestReport';
 import StateReport from '../../molecules/StateReport';
+import config from '../../../../config';
 
 import '../../Dashboard.scss';
 
@@ -51,6 +52,9 @@ const DashboardHomePage = ({
           <Fragment>
             <DaywiseSpreadReport kpi={overallInfo.kpi} series={overallInfo.chartSeries} />
             <TestReport series={overallInfo.testingRecords} />
+            <a href={config.LIVE_PATIENT_RECORDS} target="_blank" rel="noopener noreferrer" className="link">
+              {translate('dashboard.liveRecordTitle')}
+            </a>
             <h2>{translate('dashboard.stateReports')}</h2>
             <ChoroplethMap series={overallInfo.stateChartSeries} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} />
             <StateReport reports={overallInfo.stateReports} />

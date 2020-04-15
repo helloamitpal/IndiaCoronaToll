@@ -6,6 +6,8 @@ import config from '../config';
 import NotFoundModule from '../modules/NotFound/Loadable';
 import DashboardHomeModule from '../modules/Dashboard/pages/home/Loadable';
 import DashboardStateModule from '../modules/Dashboard/pages/state/Loadable';
+import UsefulLinksModule from '../modules/UsefulLinks/Loadable';
+import AboutusModule from '../modules/Aboutus/Loadable';
 import PlaceModule from '../modules/Place/pages/Loadable';
 import Header from '../components/molecules/Header';
 import Footer from '../components/molecules/Footer';
@@ -54,6 +56,16 @@ const Router = ({ history }) => {
               exact
               path={config.UNSAFE_PLACES_PAGE}
               render={(props) => <PlaceModule {...props} />}
+            />
+            <Route
+              exact
+              path={config.USEFUL_LINKS_PAGE}
+              render={(props) => <UsefulLinksModule {...props} />}
+            />
+            <Route
+              exact
+              path={config.ABOUT_US_PAGE}
+              render={(props) => <AboutusModule {...props} />}
             />
             <Route path="" render={(props) => <NotFoundModule {...props} />} />
           </Switch>

@@ -15,20 +15,26 @@ import '../Place.scss';
 
 const PlacePage = ({ placeState: { loading, errors, travelHistory }, placeActions }) => {
   const title = translate('place.unsafePlaces');
-  const [address, setAddress] = useState(travelHistory[0]);
+  const [address, setAddress] = useState(null);
 
   useEffect(() => {
     placeActions.getTravelHistory();
   }, [placeActions]);
 
+  useEffect(() => {
+    if (travelHistory) {
+      setAddress(travelHistory[0]);
+    }
+  }, [travelHistory]);
+
   const onUpdateAddress = (newValue) => {
     setAddress(newValue);
   };
 
-  const getMapPoints = () => {
-    const { label } = address;
-    return travelHistory.find(({ address: listAddr }) => (listAddr === label)) || {};
-  };
+  // const getMapPoints = () => {
+  //   const { label } = address;
+  //   return travelHistory.find(({ address: listAddr }) => (listAddr === label)) || {};
+  // };
 
   const head = (
     <Helmet key="unsafe-places-page">
@@ -44,7 +50,7 @@ const PlacePage = ({ placeState: { loading, errors, travelHistory }, placeAction
       {head}
       {loading && <LoadingIndicator />}
       {
-        travelHistory && (
+        travelHistory && address && (
           <Fragment>
             <p>{translate('place.unsafePlaceTitle')}</p>
             <Select
@@ -58,7 +64,7 @@ const PlacePage = ({ placeState: { loading, errors, travelHistory }, placeAction
               onChange={onUpdateAddress}
               searchable
             />
-            <MapPointing point={getMapPoints()} />
+            <MapPointing point={address} />
             <AddressDetails address={address} />
           </Fragment>
         )
