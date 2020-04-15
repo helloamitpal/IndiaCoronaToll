@@ -20,7 +20,7 @@
   "aboutusQs1": "Are you official?",
   "aboutusAns1": "No",
   "aboutusQs2": "What are your sources? How is the data gathered for this project?",
-  "aboutusAns2": "API is available for all at <a rel='noopener noreferrer' target='_blank' href=${LINK}>Covid19india.org API</a>. We would love it if you can use this data in the fight against this virus. The source list is here.",
+  "aboutusAns2": "API is available at <a rel='noopener noreferrer' target='_blank' href=${LINK}>Covid19india.org API</a>. We would love it if you can use this data in the fight against this virus.",
   "aboutusQs3": "Who are you?",
   "aboutusAns3": "We are a group of dedicated volunteers who curate and verify the data coming from several sources. We extract the details, like local and community transmissions, travel history and status. We never collect or expose any personally identifiable data regarding the patients.",
   "aboutusQs4": "Why are you guys putting in time and resources to do this while not gaining a single penny from it?",
