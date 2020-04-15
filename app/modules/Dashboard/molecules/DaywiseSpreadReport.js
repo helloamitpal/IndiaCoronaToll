@@ -1,6 +1,7 @@
 import React from 'react';
-import { Line } from 'react-chartjs-2';
+// import { Line } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
+import Chart from 'react-apexcharts';
 
 import KPI from './KPI';
 
@@ -11,7 +12,11 @@ const DaywiseSpreadReport = ({ series, kpi }) => {
     <div className="daywise-spread-container">
       <KPI data={kpi} />
       <div className="chart-container">
-        <Line data={series} options={{ responsive: true }} />
+        <Chart
+          options={series.options}
+          series={series.datasets}
+          type="line"
+        />
       </div>
     </div>
   );

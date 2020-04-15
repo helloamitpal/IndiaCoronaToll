@@ -16,37 +16,65 @@ const getGrowthRate = (currentVal, prevVal, reversed = false) => {
 };
 
 const getDailyChartData = (caseSeries) => {
-  const seriesConfig = {
-    fill: true,
-    data: []
-  };
-
   return caseSeries.reduce((acc, { dailyconfirmed, dailydeceased, dailyrecovered, date }) => {
     acc.datasets[0].data = [...acc.datasets[0].data, Number(dailyconfirmed)];
     acc.datasets[1].data = [...acc.datasets[1].data, Number(dailydeceased)];
     acc.datasets[2].data = [...acc.datasets[2].data, Number(dailyrecovered)];
-    acc.labels = [...acc.labels, date];
+    acc.options.xaxis.categories = [...acc.options.xaxis.categories, date];
 
     return acc;
   }, {
-    labels: [],
+    options: {
+      chart: {
+        id: 'dailycaselinechart'
+      },
+      xaxis: {
+        categories: []
+      }
+    },
     datasets: [{
-      label: translate('dashboard.confirmed'),
-      backgroundColor: 'rgba(225, 0, 0, .2)',
-      borderColor: '#ad1111',
-      ...seriesConfig
+      name: translate('dashboard.confirmed'),
+      data: []
     }, {
-      label: translate('dashboard.deceased'),
-      backgroundColor: 'rgba(242, 233, 135, .2)',
-      borderColor: '#e58d30',
-      ...seriesConfig
+      name: translate('dashboard.deceased'),
+      data: []
     }, {
-      label: translate('dashboard.recovered'),
-      backgroundColor: 'rgba(22, 175, 73, .3)',
-      borderColor: '#16af49',
-      ...seriesConfig
+      name: translate('dashboard.recovered'),
+      data: []
     }]
   });
+
+  // const seriesConfig = {
+  //   fill: true,
+  //   data: []
+  // };
+  //
+  // return caseSeries.reduce((acc, { dailyconfirmed, dailydeceased, dailyrecovered, date }) => {
+  //   acc.datasets[0].data = [...acc.datasets[0].data, Number(dailyconfirmed)];
+  //   acc.datasets[1].data = [...acc.datasets[1].data, Number(dailydeceased)];
+  //   acc.datasets[2].data = [...acc.datasets[2].data, Number(dailyrecovered)];
+  //   acc.labels = [...acc.labels, date];
+  //
+  //   return acc;
+  // }, {
+  //   labels: [],
+  //   datasets: [{
+  //     label: translate('dashboard.confirmed'),
+  //     backgroundColor: 'rgba(225, 0, 0, .2)',
+  //     borderColor: '#ad1111',
+  //     ...seriesConfig
+  //   }, {
+  //     label: translate('dashboard.deceased'),
+  //     backgroundColor: 'rgba(242, 233, 135, .2)',
+  //     borderColor: '#e58d30',
+  //     ...seriesConfig
+  //   }, {
+  //     label: translate('dashboard.recovered'),
+  //     backgroundColor: 'rgba(22, 175, 73, .3)',
+  //     borderColor: '#16af49',
+  //     ...seriesConfig
+  //   }]
+  // });
 };
 
 const getKPIData = (caseSeries) => {
