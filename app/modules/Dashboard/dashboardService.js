@@ -146,7 +146,7 @@ const dashboardService = {
     const infoObj = {};
     const stateWiseData = statewise.slice(1);
 
-    infoObj.chartSeries = getDailyChartData(caseSeries.slice(0, -1));
+    infoObj.chartSeries = getDailyChartData(caseSeries);
     infoObj.kpi = getKPIData(caseSeries);
     infoObj.stateReports = getStatewiseReport(stateWiseData);
     infoObj.stateChartSeries = getStateChartData(stateWiseData);

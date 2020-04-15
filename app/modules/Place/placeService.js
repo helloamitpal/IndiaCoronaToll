@@ -16,7 +16,7 @@ const placeService = {
           value: _cn6ca,
           label: addr,
           address: addr,
-          zoom: 13,
+          zoom: 15,
           position: latlong.split(',').map((val) => (+val))
         };
       }
