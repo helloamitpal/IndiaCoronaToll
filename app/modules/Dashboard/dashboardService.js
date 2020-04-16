@@ -135,13 +135,34 @@ const getStateChartData = (statewiseData) => {
   }));
 };
 
-const getTestingRecords = (testData) => {
-  return testData.map(({ totalpositivecases, totalsamplestested, updatetimestamp }) => ({
-    totalpositivecases,
-    totalsamplestested,
-    percentage: ((Number(totalpositivecases) / Number(totalsamplestested)) * 100).toFixed(0),
-    date: moment(updatetimestamp, config.INPUT_DATE_FORMAT).format(config.ALTERNATE_DATE_FORMAT)
-  }));
+const getTestingRecords = (testData, caseSeries) => {
+  const arrObj = {};
+
+  for (let index = testData.length - 1, caseIndex = caseSeries.length - 1; index >= 0; index -= 1, caseIndex -= 1) {
+    const { totalsamplestested, updatetimestamp } = testData[index];
+    const { dailyconfirmed, dailydeceased, dailyrecovered } = caseSeries[caseIndex];
+    const { dailyconfirmed: prevConfirmed, dailydeceased: prevDeath, dailyrecovered: prevRecovered } = caseSeries[caseIndex - 1];
+    const notFound = translate('common.notFound');
+    const confirmDiff = Number(dailyconfirmed) - Number(prevConfirmed);
+    const deathDiff = Number(dailydeceased) - Number(prevDeath);
+    const recoverDiff = Number(dailyrecovered) - Number(prevRecovered);
+    const date = moment(updatetimestamp, config.INPUT_DATE_FORMAT).format(config.ALTERNATE_DATE_FORMAT);
+
+    if (!arrObj.hasOwnProperty(date)) {
+      arrObj[date] = {
+        date,
+        totalsamplestested: totalsamplestested || translate('common.notFound'),
+        totalpositivecases: dailyconfirmed || notFound,
+        totaldeceased: dailydeceased || notFound,
+        totalrecovered: dailyrecovered || notFound,
+        recoveryCaseChange: `${recoverDiff > 0 ? '+' : ''}${recoverDiff}`,
+        deathCaseChange: `${deathDiff > 0 ? '+' : ''}${deathDiff}`,
+        positiveCaseChange: `${confirmDiff > 0 ? '+' : ''}${confirmDiff}`
+      };
+    }
+  }
+
+  return Object.values(arrObj);
 };
 
 const dashboardService = {
@@ -153,7 +174,7 @@ const dashboardService = {
     infoObj.kpi = getKPIData(caseSeries);
     infoObj.stateReports = getStatewiseReport(stateWiseData);
     infoObj.stateChartSeries = getStateChartData(stateWiseData);
-    infoObj.testingRecords = getTestingRecords(tested);
+    infoObj.testingRecords = getTestingRecords(tested, caseSeries);
 
     return infoObj;
   }

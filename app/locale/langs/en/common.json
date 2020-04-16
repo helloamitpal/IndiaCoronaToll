@@ -20,6 +20,8 @@
   "aboutusQs1": "Are you official?",
   "checkout": "Checkout our",
   "repoTitle": "Github Repository",
+  "notFound": "Not available",
+  "count": "(${COUNT})",
   "aboutusAns1": "No",
   "aboutusQs2": "What are your sources? How is the data gathered for this project?",
   "aboutusAns2": "API is available at <a rel='noopener noreferrer' target='_blank' href=${LINK}>Covid19india.org API</a>. We would love it if you can use this data in the fight against this virus.",
