@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const LinearGradient = ({ data: { fromColor, toColor, min, max } }) => {
   const gradientStyle = {
     backgroundImage: `linear-gradient(to right, ${fromColor} , ${toColor})`,
-    height: 20
+    height: 10
   };
   return (
     <div className="gradient-container">
