@@ -19,6 +19,17 @@ const getDailyChartData = (caseSeries) => {
   const confirmedLineColor = '#e58d30';
   const deathLineColor = '#ad1111';
   const recoveredLineColor = '#16af49';
+  const chartToolbarConfig = {
+    show: true,
+    tools: {
+      pan: false,
+      selection: false,
+      zoom: false,
+      zoomin: false,
+      zoomout: false,
+      reset: false
+    }
+  };
 
   return caseSeries.reduce((acc, { dailyconfirmed, dailydeceased, dailyrecovered, date }) => {
     acc.datasets[0].data = [...acc.datasets[0].data, Number(dailyconfirmed)];
@@ -31,15 +42,7 @@ const getDailyChartData = (caseSeries) => {
     options: {
       chart: {
         id: 'dailycaselinechart',
-        toolbar: {
-          show: true,
-          tools: {
-            pan: false,
-            selection: false,
-            zoom: false,
-            reset: false
-          }
-        }
+        toolbar: { ...chartToolbarConfig }
       },
       stroke: {
         width: 2

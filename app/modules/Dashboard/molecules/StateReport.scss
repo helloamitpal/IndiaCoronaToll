@@ -7,14 +7,12 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     li {
-      padding: 1em 0;
-      width: 100%;
-
-      &:not(:last-child) {
-        border-bottom: 1px solid $row-bordercolor;
-      }
+      padding: 0.5em 0;
 
       h3 {
         font-size: 1.5em;
