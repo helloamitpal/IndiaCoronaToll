@@ -29,6 +29,12 @@ const AboutusPage = () => {
       <p>{translate('common.aboutusAns3')}</p>
       <h3>{translate('common.aboutusQs4')}</h3>
       <p>{translate('common.aboutusAns4')}</p>
+      <h3>{translate('common.aboutusQs5')}</h3>
+      <p>{translate('common.aboutusAns5', { EMAIL: config.EMAIL })}</p>
+      <div className="repo-link">
+        <p>{translate('common.checkout')}</p>
+        <a href={config.GITHUB_REPO} target="_blank" rel="noopener noreferrer">{translate('common.repoTitle')}</a>
+      </div>
     </div>
   );
 };

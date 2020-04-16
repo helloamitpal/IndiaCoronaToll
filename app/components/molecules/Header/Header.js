@@ -58,6 +58,11 @@ const Header = ({ onChangeLocale }) => {
                   {translate('common.usefulLinks')}
                 </Link>
               </li>
+              <li>
+                <Link to={config.ABOUT_US_PAGE} className="item" onClick={toggleMenu}>
+                  {translate('common.aboutus')}
+                </Link>
+              </li>
             </ul>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>

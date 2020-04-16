@@ -6,5 +6,6 @@ export default {
   INPUT_DATE_FORMAT: 'DD/MM/YYYY h:mm:s',
   ALTERNATE_DATE_FORMAT: 'DD MMM YYYY',
   ANOTHER_DATE_FORMAT: 'DD MMM YYYY, h:mm A',
+  EMAIL: 'amithellopublic@gmail.com',
   EMAIL_PATTERN: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 };

@@ -18,11 +18,15 @@
   "crowdsource": "Crowdsourced list of resources and essentials across India",
   "aboutus": "About us",
   "aboutusQs1": "Are you official?",
+  "checkout": "Checkout our",
+  "repoTitle": "Github Repository",
   "aboutusAns1": "No",
   "aboutusQs2": "What are your sources? How is the data gathered for this project?",
   "aboutusAns2": "API is available at <a rel='noopener noreferrer' target='_blank' href=${LINK}>Covid19india.org API</a>. We would love it if you can use this data in the fight against this virus.",
-  "aboutusQs3": "Who are you?",
-  "aboutusAns3": "We are a group of dedicated volunteers who curate and verify the data coming from several sources. We extract the details, like local and community transmissions, travel history and status. We never collect or expose any personally identifiable data regarding the patients.",
-  "aboutusQs4": "Why are you guys putting in time and resources to do this while not gaining a single penny from it?",
-  "aboutusAns4": "This is absolutely non-profitable website. Today it's someone else who is getting infected; tomorrow it could be us. We need to prevent the spread of this virus. We need to document the data so that people with knowledge can use this data to make informed decisions."
+  "aboutusQs3": "Why are you guys putting in time and efforts to do this while not gaining a single penny from it?",
+  "aboutusAns3": "This is a non-profitable website. The primary goal is to represent the available data in a significant way that we could use that knowledge in decision making. The situation is getting deteriorated. Today it's someone else who is getting infected. Tomorrow it could be us. We need to prevent the spread of this virus.",
+  "aboutusQs4": "What kind of data are you conferring? Are you exposing any individual's identity?",
+  "aboutusAns4": "We extract the details, like local and community transmissions, travel history, unsafe places detected by the Govt officials, and overall status. We never collect or expose any personally identifiable data regarding the patients.",
+  "aboutusQs5": "Who are you?",
+  "aboutusAns5": "As of now myself Amit Pal, a solo resource who is dedicatedly volunteering to curate and verify the data coming from several sources. I would appreciate it if any enthusiastic individual volunteer to make it more purposeful. That way, we could reach out to more people to spread awareness. Please feel free to drop your ideas and thoughts in this <a href='mailto:${EMAIL}?Subject=Thank%20you' target='_blank'>email</a>."
 }
