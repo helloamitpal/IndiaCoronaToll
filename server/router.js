@@ -1,10 +1,12 @@
-const request = require('request');
-
 const logger = require('./util/logger');
+const cacheService = require('./util/cacheService');
 const {
   TRAVEL_HISTORY_URL,
+  TRAVEL_HISTORY_DATA,
   NATIONAL_DATA_URL,
-  STATEWISE_DATA_URL
+  OVERALL_DATA,
+  STATEWISE_DATA_URL,
+  STATEWISE_DATA
 } = require('./constants');
 
 const ErrorHandler = (res, err, errorText, statusCode = 500) => {
@@ -14,37 +16,38 @@ const ErrorHandler = (res, err, errorText, statusCode = 500) => {
 
 module.exports = (app, redisClient) => {
   app.get('/api/travelHistory', (req, res) => {
-    request.get(TRAVEL_HISTORY_URL, (error, response, body) => {
-      if (error) {
-        ErrorHandler(res, error, 'Error in fetching travel history');
-      } else {
-        logger.success('travel history is fetched successfully');
-        res.status(200).send(body);
-      }
+    cacheService.cachedData(TRAVEL_HISTORY_URL, TRAVEL_HISTORY_DATA).then((body) => {
+      logger.success('travel history is fetched successfully');
+      res.status(200).send(body);
+    }).cache((error) => {
+      ErrorHandler(res, error, 'Error in fetching travel history');
     });
   });
 
   app.get('/api/overallInfo', (req, res) => {
-    request.get(NATIONAL_DATA_URL, (error, response, body) => {
-      if (error) {
-        ErrorHandler(res, error, 'Error in fetching overall Info');
-      } else {
-        logger.success('case series, state wise data and tested results are fetched successfully');
-        res.status(200).send(body);
-      }
+    cacheService.cachedData(NATIONAL_DATA_URL, OVERALL_DATA).then((body) => {
+      logger.success('case series, state wise data and tested results are fetched successfully');
+      res.status(200).send(body);
+    }).cache((error) => {
+      ErrorHandler(res, error, 'Error in fetching overall Info');
     });
   });
 
   app.get('/api/stateWiseData', (req, res) => {
-    request.get(STATEWISE_DATA_URL, (error, response, body) => {
-      if (error) {
-        ErrorHandler(res, error, 'Error in fetching state wise Info');
-      } else {
-        const { state } = req.query;
-        const filteredData = JSON.parse(body).find(({ state: resState }) => (resState.toLowerCase().includes(state.toLowerCase())));
-        logger.success('state wise data is fetched successfully');
-        res.status(200).send(filteredData);
+    cacheService.cachedData(STATEWISE_DATA_URL, STATEWISE_DATA).then((body) => {
+      logger.success('state wise data is fetched successfully');
+
+      const { state } = req.query;
+
+      if (!state) {
+        throw new Error('state param is not sent');
       }
+
+      const filteredData = JSON.parse(body).find(({ state: resState }) => (resState.toLowerCase().includes(state.toLowerCase())));
+
+      res.status(200).send(filteredData);
+    }).cache((error) => {
+      ErrorHandler(res, error, 'Error in fetching state wise Info');
     });
   });
 
