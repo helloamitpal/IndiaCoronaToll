@@ -55,12 +55,12 @@ const DashboardStatePage = ({
               <div>
                 <h3>{stateData.deaths}</h3>
                 <span>{translate('dashboard.deceased')}</span>
-                <h3>{translate('dashboard.percentage', { PERCENTAGE: stateData.deathsPerTotal })}</h3>
+                <h4>{translate('dashboard.percentage', { PERCENTAGE: stateData.deathsPerTotal })}</h4>
               </div>
               <div>
                 <h3>{stateData.recovered}</h3>
                 <span>{translate('dashboard.recovered')}</span>
-                <h3>{translate('dashboard.percentage', { PERCENTAGE: stateData.recoverPerTotal })}</h3>
+                <h4>{translate('dashboard.percentage', { PERCENTAGE: stateData.recoverPerTotal })}</h4>
               </div>
             </section>
             <h2 className="aligned-left">{translate('dashboard.districtTitle')}</h2>

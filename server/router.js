@@ -19,7 +19,7 @@ module.exports = (app, redisClient) => {
     cacheService.cachedData(TRAVEL_HISTORY_URL, TRAVEL_HISTORY_DATA).then((body) => {
       logger.success('travel history is fetched successfully');
       res.status(200).send(body);
-    }).cache((error) => {
+    }, (error) => {
       ErrorHandler(res, error, 'Error in fetching travel history');
     });
   });
@@ -28,7 +28,7 @@ module.exports = (app, redisClient) => {
     cacheService.cachedData(NATIONAL_DATA_URL, OVERALL_DATA).then((body) => {
       logger.success('case series, state wise data and tested results are fetched successfully');
       res.status(200).send(body);
-    }).cache((error) => {
+    }, (error) => {
       ErrorHandler(res, error, 'Error in fetching overall Info');
     });
   });
@@ -43,10 +43,10 @@ module.exports = (app, redisClient) => {
         throw new Error('state param is not sent');
       }
 
-      const filteredData = JSON.parse(body).find(({ state: resState }) => (resState.toLowerCase().includes(state.toLowerCase())));
+      const filteredData = body.find(({ state: resState }) => (resState.toLowerCase().includes(state.toLowerCase())));
 
       res.status(200).send(filteredData);
-    }).cache((error) => {
+    }, (error) => {
       ErrorHandler(res, error, 'Error in fetching state wise Info');
     });
   });
