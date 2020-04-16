@@ -19,6 +19,24 @@
     justify-content: center;
   }
 
+  .scroll-top {
+    position: fixed;
+    right: 0.5em;
+    bottom: 0.5em;
+    color: $link-color;
+    border-radius: 50%;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    box-shadow: 0 0 4px 1px $link-shadow;
+    padding: 6px;
+  }
+
   .aligned-left {
     text-align: left;
   }
@@ -81,3 +99,9 @@
     }
   }
 }
+//
+// @media only screen and (max-width: 440px) {
+//   .dashboard-page-container .scroll-top {
+//     left: 0
+//   }
+// }

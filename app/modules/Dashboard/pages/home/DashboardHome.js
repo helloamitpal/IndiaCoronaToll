@@ -12,6 +12,7 @@ import DaywiseSpreadReport from '../../molecules/DaywiseSpreadReport';
 import TestReport from '../../molecules/TestReport';
 import StateReport from '../../molecules/StateReport';
 import config from '../../../../config';
+import { useScroll } from '../../../../components/hooks/useScroll';
 
 import '../../Dashboard.scss';
 
@@ -25,14 +26,21 @@ const DashboardHomePage = ({
   dashboardActions
 }) => {
   const title = translate('dashboard.title');
+  const { verticalScrollPos } = useScroll();
 
   useEffect(() => {
+    setTimeout(() => window.scroll({ top: 0, left: 0, behavior: 'smooth' }), 100);
     dashboardActions.getOverallInfo();
   }, [dashboardActions]);
 
   const onMouseEnter = ({ name, value }) => (`${name}: ${value}`);
 
   const onMouseLeave = ({ name, value }) => ('');
+
+  const scrollToTop = (evt) => {
+    evt.preventDefault();
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+  };
 
   const head = (
     <Helmet key="dashboard-home-page">
@@ -47,6 +55,7 @@ const DashboardHomePage = ({
     <div className="dashboard-page-container">
       {head}
       {loading && <LoadingIndicator />}
+      <a href="" onClick={scrollToTop} className={`scroll-top material-icons red ${verticalScrollPos > config.MIN_SCROLL ? '' : 'hide'}`}>keyboard_arrow_up</a>
       {
         overallInfo && (
           <Fragment>
