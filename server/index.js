@@ -10,9 +10,13 @@ const logger = require('./util//logger');
 const argv = require('./util/argv');
 const port = require('./util/port');
 const setupMiddleware = require('./middlewares/frontendMiddleware');
+const scheduler = require('./util/cronService');
 const setupRouter = require('./router');
 
 const app = express();
+
+// The scheduler is a cron Job scheduled to clear cache data in every 4 hours
+scheduler();
 
 // making .env file to process.env
 dotenv.config();
