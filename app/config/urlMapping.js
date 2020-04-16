@@ -9,6 +9,7 @@ export default {
   WHO_LINK: 'HTTPS://WWW.WHO.INT/EMERGENCIES/DISEASES/NOVEL-CORONAVIRUS-2019',
   CDC_LINK: 'HTTPS://WWW.CDC.GOV/CORONAVIRUS/2019-NCOV/FAQ.HTML',
   CROWDSOURCE_LINK: 'HTTPS://BIT.LY/COVID19RESOURCELIST',
+  LINKEDIN_URL: 'https://www.linkedin.com/in/amit-pal-0241423a/',
   GITHUB_REPO: 'https://github.com/amit040386/IndiaCoronaToll',
   DATA_API: 'https://api.covid19india.org/',
   WORLDWIDE_CASE_URL: 'https://www.worldometers.info/coronavirus/',

@@ -90,15 +90,16 @@ module.exports = (options) => ({
 
     // copying service worker custom files for listening push notifications
     new CopyWebpackPlugin([
-      { from: 'app/locale/langs/locales.json', to: 'langs' }
+      { from: 'app/locale/langs/locales.json', to: 'langs' },
+      { from: 'app/components/atoms/ChoroplethMap/india.topo.json', to: '' }
     ]),
 
     // PWA settings
     new WebpackPwaManifest({
-      name: 'react-csr-template',
-      short_name: 'react-csr-template',
-      description: 'This is a react CSR boilerplate code.',
-      background_color: '#ffffff',
+      name: 'IndiaCoronaToll',
+      short_name: 'ICT',
+      description: 'This application portrays COVID-19 status in India based on the Govt data.',
+      background_color: '#F44336',
       theme_color: '#000000',
       start_url: '/',
       display: 'standalone',
@@ -106,12 +107,12 @@ module.exports = (options) => ({
       author: {
         name: 'Amit Pal',
         website: 'https://www.linkedin.com/in/amit-pal-0241423a/',
-        github: 'https://github.com/amit040386/react-csr-template'
+        github: 'https://github.com/amit040386/IndiaCoronaToll'
       },
       icons: [
         {
           src: path.resolve('public/assets/logo512.png'),
-          sizes: [192, 512]
+          sizes: [256, 512]
         }
       ]
     })

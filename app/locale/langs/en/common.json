@@ -28,5 +28,5 @@
   "aboutusQs4": "What kind of data are you conferring? Are you exposing any individual's identity?",
   "aboutusAns4": "We extract the details, like local and community transmissions, travel history, unsafe places detected by the Govt officials, and overall status. We never collect or expose any personally identifiable data regarding the patients.",
   "aboutusQs5": "Who are you?",
-  "aboutusAns5": "As of now myself Amit Pal, a solo resource who is dedicatedly volunteering to curate and verify the data coming from several sources. I would appreciate it if any enthusiastic individual volunteer to make it more purposeful. That way, we could reach out to more people to spread awareness. Please feel free to drop your ideas and thoughts in this <a href='mailto:${EMAIL}?Subject=Thank%20you' target='_blank'>email</a>."
+  "aboutusAns5": "As of now myself <a href='${LINKEDIN}' target='_blank'>Amit Pal</a>, a solo resource who is dedicatedly volunteering to curate and verify the data coming from several sources. I would appreciate it if any enthusiastic individual volunteer to make it more purposeful. That way, we could reach out to more people to spread awareness. Please feel free to drop your ideas and thoughts in this <a href='mailto:${EMAIL}?Subject=Thank%20you' target='_blank'>email</a>."
 }

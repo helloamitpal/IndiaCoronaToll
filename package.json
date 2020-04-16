@@ -6,7 +6,7 @@
     "node": ">=8.10.0",
     "npm": ">=5"
   },
-  "description": "This application portrays COVID-19 spread, recovery status in India. The Govt data has been used in this application to depict various charts.",
+  "description": "This application portrays COVID-19 status in India based on the Govt data.",
   "repository": {
     "type": "git",
     "url": "https://github.com/amit040386/IndiaCoronaToll.git"
