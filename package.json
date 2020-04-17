@@ -25,8 +25,7 @@
     "react-router-dom",
     "webpack",
     "redux-data-flow",
-    "csr",
-    "proxy-setup"
+    "csr"
   ],
   "license": "MIT",
   "author": "Amit Pal",
