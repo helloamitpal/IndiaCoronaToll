@@ -65,6 +65,13 @@ app.listen(port, host, (err) => {
   return null;
 });
 
+// api health check
+app.get('/api/healthcheck', (req, res) => {
+  res.status(200).json({
+    NODE_ENV: process.env.NODE_ENV || 'LOCAL'
+  });
+});
+
 process.on('uncaughtException', (exception) => {
   const exp = exception.toString();
 
