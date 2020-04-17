@@ -2,6 +2,8 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 
+const router = require('../router');
+
 module.exports = function addProdMiddlewares(app, options) {
   const publicPath = options.publicPath || '/';
   const outputPath = options.outputPath || path.resolve(process.cwd(), 'build');
@@ -13,4 +15,6 @@ module.exports = function addProdMiddlewares(app, options) {
   app.use(publicPath, express.static(outputPath));
 
   app.get(/^((?!api).)*$/, (req, res) => res.sendFile(path.resolve(outputPath, 'index.html')));
+
+  app.all('/api/*', router);
 };

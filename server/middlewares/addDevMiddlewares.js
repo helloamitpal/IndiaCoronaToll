@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
+const router = require('../router');
+
 function createWebpackMiddleware(compiler, publicPath) {
   return webpackDevMiddleware(compiler, {
     noInfo: true,
@@ -35,4 +37,6 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
 
   // If the url is not containing /api then it should serve index.html
   app.get(/^((?!api).)*$/, (req, res) => (servingPage(res)));
+
+  app.all('/api/*', router);
 };
