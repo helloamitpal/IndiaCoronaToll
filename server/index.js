@@ -64,3 +64,10 @@ app.listen(port, host, (err) => {
 
   return null;
 });
+
+process.on('uncaughtException', (exception) => {
+  const exp = exception.toString();
+
+  logger.error(`Something unexpected happened: ${exp}`);
+  process.stdout.write(exp);
+});
