@@ -35,9 +35,8 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
     });
   };
 
-  // If the url is not containing /api then it should serve index.html
-  // app.get(/^((?!api).)*$/, (req, res) => (servingPage(res)));
-  app.get('/', (req, res) => (servingPage(res)));
-
   app.all('/api/*', router);
+
+  // If the url is not containing /api then it should serve index.html
+  app.get('/*', (req, res) => (servingPage(res)));
 };
