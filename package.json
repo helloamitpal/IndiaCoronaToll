@@ -45,7 +45,8 @@
     "test": "jest -u --coverage",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "locale": "node mergeLocales.js"
+    "locale": "node mergeLocales.js",
+    "heroku-postbuild": "cd app && npm install && npm install --only=production --no-shrinkwrap && npm run build"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
